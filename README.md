@@ -1,3 +1,5 @@
+# [Figma template link](https://www.figma.com/file/NRRHaIGSzhO7NftDkPjZmZ/Riksha?type=design&node-id=769%3A3272&mode=design&t=fG2lIBrn5fSqlMUz-1)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

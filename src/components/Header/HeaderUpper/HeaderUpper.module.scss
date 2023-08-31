@@ -1,4 +1,4 @@
-@use '../../assets/styles/variables.scss';
+@use '../../../assets/styles/variables.scss';
 
 .upper {
     height: 89px;
@@ -12,6 +12,14 @@
         max-width: 1222px;
         width: 100%;
         margin: auto;
+
+        .logo {
+            width: 134px;
+            height: 156px;
+            overflow: auto;
+            margin-top: 8px;
+            margin-right: 31px;
+        }
 
         .main {
             display: flex;
@@ -27,8 +35,6 @@
 
                     a {
                         margin: auto;
-                        text-decoration: none;
-                        color: variables.$black;
                     }
                 }
             }
@@ -41,13 +47,11 @@
                 margin-right: 56px;
 
                 .phone {
-                    .icon{
+                    .icon {
                         margin-right: 7px;
                     }
 
                     .number {
-                        color: variables.$black;
-                        text-decoration: none;
                         font-size: 16px;
                         font-weight: 500;
                     }
@@ -83,6 +87,20 @@
 
                 .icon {
                     margin: auto;
+                    position: relative;
+
+                    .counter {
+                        width: 16px;
+                        height: 16px;
+                        position: absolute;
+                        bottom: 11px;
+                        left: 12px;
+                        color: #fff;
+                        background-color: variables.$accent;
+                        font-size: 11px;
+                        text-align: center;
+                        border-radius: 50%;
+                    }
                 }
             }
 
@@ -96,55 +114,6 @@
 
                 .icon {
                     margin: auto;
-                }
-            }
-        }
-    }
-}
-
-.logo {
-    width: 134px;
-    height: 156px;
-    overflow: auto;
-    margin-top: 8px;
-    margin-right: 31px;
-}
-
-.bottom {
-    display: flex;
-    height: 83px;
-    background-color: variables.$grey;
-
-    .wrapper {
-        display: flex;
-        align-items: center;
-        max-width: 1200px;
-        margin: auto;
-
-        .categories {
-            display: flex;
-            gap: 44px;
-            align-items: center;
-            margin-left: 176px;
-
-            .category {
-                width: 64px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-
-                .icon {
-                    width: 32px;
-                    height: 32px;
-                    margin-bottom: 10px;
-                }
-
-                .name {
-                    font-size: 16px;
-                    font-weight: 500;
-                    color: variables.$black;
                 }
             }
         }
