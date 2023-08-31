@@ -1,0 +1,42 @@
+@use '../../assets/styles/variables.scss';
+
+.bottom {
+    display: flex;
+    height: 83px;
+    background-color: variables.$grey;
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+
+        .categories {
+            display: flex;
+            gap: 44px;
+            align-items: center;
+            margin-left: 176px;
+
+            .category {
+                width: 64px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+
+                .icon {
+                    width: 32px;
+                    height: 32px;
+                    margin-bottom: 10px;
+                }
+
+                .name {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: variables.$black;
+                }
+            }
+        }
+    }
+}

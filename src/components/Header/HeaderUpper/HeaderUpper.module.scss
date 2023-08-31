@@ -1,0 +1,152 @@
+@use '../../assets/styles/variables.scss';
+
+.upper {
+    height: 89px;
+    display: flex;
+    background-color: #fff;
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        max-width: 1222px;
+        width: 100%;
+        margin: auto;
+
+        .main {
+            display: flex;
+            margin-bottom: 76px;
+
+            .links {
+                display: flex;
+                gap: 49px;
+                margin-right: 86px;
+
+                .link {
+                    display: flex;
+
+                    a {
+                        margin: auto;
+                        text-decoration: none;
+                        color: variables.$black;
+                    }
+                }
+            }
+
+            .contacts {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+                margin-right: 56px;
+
+                .phone {
+                    .icon{
+                        margin-right: 7px;
+                    }
+
+                    .number {
+                        color: variables.$black;
+                        text-decoration: none;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                }
+
+                .schedule {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: variables.$text-grey;
+                }
+            }
+
+            .cart {
+                width: 134px;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: variables.$grey;
+                border-radius: 6px;
+                margin-right: 25px;
+
+                .sum {
+                    padding: 0 10px;
+                    width: 78px;
+                    text-align: center;
+                }
+
+                .delimiter {
+                    height: 24px;
+                    border-right: 1px solid #fff;
+                }
+
+                .icon {
+                    margin: auto;
+                }
+            }
+
+            .profile {
+                width: 48px;
+                height: 48px;
+                display: flex;
+                justify-content: center;
+                background-color: variables.$grey;
+                border-radius: 6px;
+
+                .icon {
+                    margin: auto;
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    width: 134px;
+    height: 156px;
+    overflow: auto;
+    margin-top: 8px;
+    margin-right: 31px;
+}
+
+.bottom {
+    display: flex;
+    height: 83px;
+    background-color: variables.$grey;
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+
+        .categories {
+            display: flex;
+            gap: 44px;
+            align-items: center;
+            margin-left: 176px;
+
+            .category {
+                width: 64px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+
+                .icon {
+                    width: 32px;
+                    height: 32px;
+                    margin-bottom: 10px;
+                }
+
+                .name {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: variables.$black;
+                }
+            }
+        }
+    }
+}
