@@ -1,0 +1,11 @@
+@use '../../assets/styles/variables';
+
+.sort {
+    .wrapper {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        max-width: 1223px;
+        margin: auto;
+    }
+}

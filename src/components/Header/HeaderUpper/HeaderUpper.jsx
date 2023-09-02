@@ -1,7 +1,7 @@
 import styles from './HeaderUpper.module.scss'
-import phone from '../../../assets/images/svg/phone-fill.svg'
-import cart from '../../../assets/images/svg/cart.svg'
-import profile from '../../../assets/images/svg/profile.svg'
+import phone from '../../../assets/images/svg/header/phone-fill.svg'
+import cart from '../../../assets/images/svg/header/cart.svg'
+import profile from '../../../assets/images/svg/header/profile.svg'
 import logo from '../../../assets/images/png/logo.png'
 
 export function HeaderUpper() {
