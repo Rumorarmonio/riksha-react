@@ -27,7 +27,7 @@ function SortType() {
                         <ul>
                             {
                                 list.map((name, index) => (
-                                    <li onClick={() => onClickListItem(index)} className={selected === index ? 'active' : ''} key={index}> {name} </li>
+                                    <li onClick={() => onClickListItem(index)} className={selected === index ? 'active' : ''} key={index}>{name}</li>
                                 ))
                             }
                         </ul>

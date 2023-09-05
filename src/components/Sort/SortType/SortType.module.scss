@@ -23,22 +23,21 @@
 
         span {
             font-weight: 500;
+            user-select: none;
         }
 
         .arrow {
             border: solid variables.$black-icon;
             border-width: 0 2px 2px 0;
             display: inline-block;
-            padding: 3px;
+            padding: 5px;
 
             &.up {
                 transform: rotate(-135deg);
-                -webkit-transform: rotate(-135deg);
             }
 
             &.down {
                 transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
             }
         }
     }
@@ -63,7 +62,7 @@
 
                 &.active,
                 &:hover {
-                    background: rgba(254, 95, 30, 0.05);
+                    background: rgba(variables.$accent, 0.2);
                 }
 
                 &.active {

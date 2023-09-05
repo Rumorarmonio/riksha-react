@@ -2,20 +2,20 @@
 
 .bottom {
     display: flex;
-    height: 83px;
     background-color: variables.$grey;
 
     .wrapper {
         display: flex;
         align-items: center;
-        max-width: 1200px;
-        margin: auto;
+        max-width: 1224px;
+        margin: 12px auto;
 
         .categories {
             display: flex;
+            flex-wrap: wrap;
             gap: 44px;
             align-items: center;
-            margin-left: 176px;
+            margin-left: 188px;
 
             .category {
                 width: 64px;

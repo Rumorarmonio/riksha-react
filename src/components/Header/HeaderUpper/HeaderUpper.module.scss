@@ -3,6 +3,7 @@
 .upper {
     height: 89px;
     display: flex;
+    flex-wrap: wrap;
     background-color: #fff;
 
     .wrapper {
@@ -23,10 +24,12 @@
 
         .main {
             display: flex;
+            flex-wrap: wrap;
             margin-bottom: 76px;
 
             .links {
                 display: flex;
+                flex-wrap: wrap;
                 gap: 49px;
                 margin-right: 86px;
 
