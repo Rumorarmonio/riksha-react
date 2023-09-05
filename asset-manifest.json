@@ -1,7 +1,8 @@
 {
   "files": {
-    "main.css": "/riksha-react/static/css/main.1f8ae2e2.css",
-    "main.js": "/riksha-react/static/js/main.1a60adfb.js",
+    "main.css": "/riksha-react/static/css/main.48baf85e.css",
+    "main.js": "/riksha-react/static/js/main.bc36590b.js",
+    "static/media/wavy-pattern.svg": "/riksha-react/static/media/wavy-pattern.d01dac3ebd8a8b4be98b.svg",
     "static/media/TTInterfaces-ThinItalic.eot": "/riksha-react/static/media/TTInterfaces-ThinItalic.552a2a476ed9c1bde3c2.eot",
     "static/media/TTInterfaces-ThinItalic.ttf": "/riksha-react/static/media/TTInterfaces-ThinItalic.2db1515b0e9f28c6d9fe.ttf",
     "static/media/TTInterfaces-ExtraLightItalic.eot": "/riksha-react/static/media/TTInterfaces-ExtraLightItalic.051d4eeeddfb41b23b79.eot",
@@ -38,6 +39,8 @@
     "static/media/TTInterfaces-ExtraBold.ttf": "/riksha-react/static/media/TTInterfaces-ExtraBold.f3516ef80dd976d176bb.ttf",
     "static/media/TTInterfaces-Bold.eot": "/riksha-react/static/media/TTInterfaces-Bold.df4c2255743c2bf2b33a.eot",
     "static/media/TTInterfaces-Bold.ttf": "/riksha-react/static/media/TTInterfaces-Bold.4fe27a30a05599381987.ttf",
+    "static/media/philadelphia.png": "/riksha-react/static/media/philadelphia.4f554b7b73ccd9b9e4ba.png",
+    "static/media/shrimp.png": "/riksha-react/static/media/shrimp.92f3214a3b905136716e.png",
     "static/media/TTInterfaces-ThinItalic.woff": "/riksha-react/static/media/TTInterfaces-ThinItalic.0b5d2117810a130fc1ec.woff",
     "static/media/TTInterfaces-ExtraLightItalic.woff": "/riksha-react/static/media/TTInterfaces-ExtraLightItalic.4351f0c4602df0091615.woff",
     "static/media/TTInterfaces-LightItalic.woff": "/riksha-react/static/media/TTInterfaces-LightItalic.9029e39579ce6ad22726.woff",
@@ -77,7 +80,6 @@
     "static/media/logo.png": "/riksha-react/static/media/logo.19d06b523228ab752c09.png",
     "static/media/crab.png": "/riksha-react/static/media/crab.12f88d6a677ad2eac696.png",
     "static/media/mussels.png": "/riksha-react/static/media/mussels.df54303f08fc0c0f6e7c.png",
-    "static/media/shrimp.png": "/riksha-react/static/media/shrimp.92f3214a3b905136716e.png",
     "static/media/tuna.png": "/riksha-react/static/media/tuna.3c2eb1d142576ce3fca3.png",
     "static/media/rolls.svg": "/riksha-react/static/media/rolls.1bc8387b838d4f6c418dadb4db564794.svg",
     "static/media/pizza.svg": "/riksha-react/static/media/pizza.fd1d4bdbd4c83cb7ae5933bb95040d76.svg",
@@ -99,11 +101,11 @@
     "static/media/wok.svg": "/riksha-react/static/media/wok.d742cc51b54eaa889f7e1dd4c7ff5274.svg",
     "static/media/new.svg": "/riksha-react/static/media/new.8680e12d06c823eeddca93b0612d837d.svg",
     "static/media/profile.svg": "/riksha-react/static/media/profile.533f6f63618509f7f48afd0c13e8b3e0.svg",
-    "main.1f8ae2e2.css.map": "/riksha-react/static/css/main.1f8ae2e2.css.map",
-    "main.1a60adfb.js.map": "/riksha-react/static/js/main.1a60adfb.js.map"
+    "main.48baf85e.css.map": "/riksha-react/static/css/main.48baf85e.css.map",
+    "main.bc36590b.js.map": "/riksha-react/static/js/main.bc36590b.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f8ae2e2.css",
-    "static/js/main.1a60adfb.js"
+    "static/css/main.48baf85e.css",
+    "static/js/main.bc36590b.js"
   ]
 }
