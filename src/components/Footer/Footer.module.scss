@@ -1,0 +1,87 @@
+@use '../../assets/styles/variables';
+
+.footer {
+    background-color: variables.$black;
+    color: #fff;
+    padding: 35px 0 18px 0;
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1257px;
+        margin: auto;
+        gap: 51px;
+
+        .logo {
+            position: relative;
+            width: 112px;
+            margin-left: 17px;
+
+            img {
+                position: absolute;
+                bottom: 32px;
+            }
+        }
+
+        a, span {
+            color: #fff;
+        }
+
+        .left {
+            margin-right: 39px;
+
+            .links {
+                display: flex;
+                gap: 40px;
+                margin-bottom: 14px;
+            }
+
+            .socials {
+                display: flex;
+                gap: 20px;
+            }
+        }
+
+        .center {
+            width: 420px;
+            margin-right: 17px;
+
+            .links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: space-between;
+
+                li {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+
+            .number {
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 15px;
+                padding-top: 4px;
+            }
+
+            .schedule {
+                padding-right: 7px;
+                font-size: 16px;
+                font-weight: 400;
+                margin-bottom: 20px;
+            }
+
+            .copyright {
+                font-size: 12px;
+                font-weight: 300;
+                padding-right: 7px;
+            }
+        }
+    }
+}

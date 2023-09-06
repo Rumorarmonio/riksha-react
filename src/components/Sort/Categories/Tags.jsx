@@ -34,7 +34,7 @@ export function Tags() {
             icon: require('../../../assets/images/svg/attributes/spicy.svg').default
         },
         {
-            name: 'Запеченный рол',
+            name: 'Запеченный ролл',
             icon: require('../../../assets/images/svg/attributes/baked.svg').default
         },
         {
