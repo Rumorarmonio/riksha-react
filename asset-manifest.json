@@ -1,8 +1,11 @@
 {
   "files": {
-    "main.css": "/riksha-react/static/css/main.48baf85e.css",
-    "main.js": "/riksha-react/static/js/main.bc36590b.js",
+    "main.css": "/riksha-react/static/css/main.16878b93.css",
+    "main.js": "/riksha-react/static/js/main.12374a2f.js",
+    "static/media/wavy-pattern-big.svg": "/riksha-react/static/media/wavy-pattern-big.cf7fd7c15b1fb3e5135185a350eb5a52.svg",
     "static/media/wavy-pattern.svg": "/riksha-react/static/media/wavy-pattern.d01dac3ebd8a8b4be98b.svg",
+    "static/media/cooking1.png": "/riksha-react/static/media/cooking1.33d72ad13e53eda40c77.png",
+    "static/media/cooking2.png": "/riksha-react/static/media/cooking2.45ae93139c6691ecdf9c.png",
     "static/media/TTInterfaces-ThinItalic.eot": "/riksha-react/static/media/TTInterfaces-ThinItalic.552a2a476ed9c1bde3c2.eot",
     "static/media/TTInterfaces-ThinItalic.ttf": "/riksha-react/static/media/TTInterfaces-ThinItalic.2db1515b0e9f28c6d9fe.ttf",
     "static/media/TTInterfaces-ExtraLightItalic.eot": "/riksha-react/static/media/TTInterfaces-ExtraLightItalic.051d4eeeddfb41b23b79.eot",
@@ -78,6 +81,7 @@
     "static/media/TTInterfaces-Light.woff2": "/riksha-react/static/media/TTInterfaces-Light.8d50a771621b6126235b.woff2",
     "static/media/TTInterfaces-Regular.woff2": "/riksha-react/static/media/TTInterfaces-Regular.5f61f123e8e14b8eac49.woff2",
     "static/media/logo.png": "/riksha-react/static/media/logo.19d06b523228ab752c09.png",
+    "static/media/logo-footer.png": "/riksha-react/static/media/logo-footer.fbebad11f8ad0d1e35f3.png",
     "static/media/crab.png": "/riksha-react/static/media/crab.12f88d6a677ad2eac696.png",
     "static/media/mussels.png": "/riksha-react/static/media/mussels.df54303f08fc0c0f6e7c.png",
     "static/media/tuna.png": "/riksha-react/static/media/tuna.3c2eb1d142576ce3fca3.png",
@@ -93,19 +97,22 @@
     "static/media/dessert.svg": "/riksha-react/static/media/dessert.0df3d991b59e5f26ee89509b788208ca.svg",
     "static/media/sets.svg": "/riksha-react/static/media/sets.2bdde060d683c325b3ff516432838178.svg",
     "static/media/beverages.svg": "/riksha-react/static/media/beverages.a74f4b3601c8d847be97dae88d293ffd.svg",
+    "static/media/instagram.svg": "/riksha-react/static/media/instagram.f75d6e14dd4596f72cd8d0ad9a84a2b1.svg",
+    "static/media/vk.svg": "/riksha-react/static/media/vk.d3dbf747417fd93307cc15ee67b157fc.svg",
     "static/media/discount.svg": "/riksha-react/static/media/discount.162f750265b4e1e98668bd6f6fd2791c.svg",
     "static/media/top.svg": "/riksha-react/static/media/top.f3063b0edb2139af79b5d2630ee1ad83.svg",
     "static/media/cart.svg": "/riksha-react/static/media/cart.911e14ae84b6512da85b04957b34b430.svg",
     "static/media/phone-fill.svg": "/riksha-react/static/media/phone-fill.c9c77bb3f1b94717c6fe9109309be97a.svg",
     "index.html": "/riksha-react/index.html",
+    "static/media/facebook.svg": "/riksha-react/static/media/facebook.91d739ffe29ccd56c89fae7d506b7958.svg",
     "static/media/wok.svg": "/riksha-react/static/media/wok.d742cc51b54eaa889f7e1dd4c7ff5274.svg",
     "static/media/new.svg": "/riksha-react/static/media/new.8680e12d06c823eeddca93b0612d837d.svg",
     "static/media/profile.svg": "/riksha-react/static/media/profile.533f6f63618509f7f48afd0c13e8b3e0.svg",
-    "main.48baf85e.css.map": "/riksha-react/static/css/main.48baf85e.css.map",
-    "main.bc36590b.js.map": "/riksha-react/static/js/main.bc36590b.js.map"
+    "main.16878b93.css.map": "/riksha-react/static/css/main.16878b93.css.map",
+    "main.12374a2f.js.map": "/riksha-react/static/js/main.12374a2f.js.map"
   },
   "entrypoints": [
-    "static/css/main.48baf85e.css",
-    "static/js/main.bc36590b.js"
+    "static/css/main.16878b93.css",
+    "static/js/main.12374a2f.js"
   ]
 }
