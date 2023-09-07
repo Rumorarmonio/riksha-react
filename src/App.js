@@ -9,8 +9,8 @@ function App() {
         <div className="App">
             <Header/>
             <Routes>
-                <Route path="/" element={<Catalog/>}/>
-                <Route path='*' element={<NotFound/>} />
+                <Route path="/riksha-react" element={<Catalog/>}/>
+                <Route path="*" element={<NotFound/>}/>
             </Routes>
             <Footer/>
         </div>
