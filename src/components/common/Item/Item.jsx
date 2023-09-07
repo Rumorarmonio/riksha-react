@@ -1,4 +1,5 @@
 import styles from './Item.module.scss'
+import {Button} from '../Button/Button'
 
 export function Item({item, index, today}) {
     let leftColumn = null
@@ -69,7 +70,13 @@ export function Item({item, index, today}) {
                         <span className={styles.old}>{item.oldPrice && item.oldPrice + '\u20BD'}&#160;</span>
                         <span className={styles.new}>{item.price} &#8381;</span>
                     </div>
-                    <a className={styles.button} href="https://www.google.com/">Заказать</a>
+                    <Button link="https://www.google.com/"
+                            label='Заказать'
+                            style={{
+                                marginTop: '7px',
+                                padding: '13px 60px'
+                            }}
+                    />
                 </div>
             </div>
         </li>

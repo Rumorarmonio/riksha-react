@@ -1,5 +1,5 @@
 import styles from './FoodList.module.scss'
-import {Item} from './Item/Item'
+import {Item} from '../../common/Item/Item'
 
 export function FoodList() {
     const chars = {SPICY: 'spicy', BAKED: 'baked', VEGAN: 'vegan'}
@@ -7,7 +7,7 @@ export function FoodList() {
     const items = [
         {
             name: 'Ролл "Филадельфия"',
-            image: require('../../assets/images/png/rolls/philadelphia.png'),
+            image: require('../../../assets/images/png/rolls/philadelphia.png'),
             weight: '200 грамм',
             calories: 130,
             ingredients: 'Лосось, сыр "Филадельфия", огурец, авокадо',
@@ -19,7 +19,7 @@ export function FoodList() {
         },
         {
             name: 'Ролл "Сливочная креветка"',
-            image: require('../../assets/images/png/rolls/shrimp.png'),
+            image: require('../../../assets/images/png/rolls/shrimp.png'),
             weight: '200 грамм',
             calories: 130,
             ingredients: 'Лосось, сыр "Филадельфия", огурец, авокадо',
@@ -31,7 +31,7 @@ export function FoodList() {
         },
         {
             name: 'Ролл "Чикен энд Чиз"',
-            image: require('../../assets/images/png/rolls/philadelphia.png'),
+            image: require('../../../assets/images/png/rolls/philadelphia.png'),
             weight: '200 грамм',
             calories: 130,
             ingredients: 'Лосось, сыр "Филадельфия", огурец, авокадо',
@@ -43,7 +43,7 @@ export function FoodList() {
         },
         {
             name: 'Ролл "Филадельфия"',
-            image: require('../../assets/images/png/rolls/philadelphia.png'),
+            image: require('../../../assets/images/png/rolls/philadelphia.png'),
             weight: '200 грамм',
             calories: 130,
             ingredients: 'Лосось, сыр "Филадельфия", огурец, авокадо',
@@ -55,7 +55,7 @@ export function FoodList() {
         },
         {
             name: 'Ролл "Сливочная креветка"',
-            image: require('../../assets/images/png/rolls/shrimp.png'),
+            image: require('../../../assets/images/png/rolls/shrimp.png'),
             weight: '200 грамм',
             calories: 130,
             ingredients: 'Лосось, сыр "Филадельфия", огурец, авокадо',
@@ -67,7 +67,7 @@ export function FoodList() {
         },
         {
             name: 'Ролл "Чикен энд Чиз"',
-            image: require('../../assets/images/png/rolls/philadelphia.png'),
+            image: require('../../../assets/images/png/rolls/philadelphia.png'),
             weight: '200 грамм',
             calories: 130,
             ingredients: 'Лосось, сыр "Филадельфия", огурец, авокадо',
@@ -79,7 +79,7 @@ export function FoodList() {
         },
         {
             name: 'Ролл "Филадельфия"',
-            image: require('../../assets/images/png/rolls/philadelphia.png'),
+            image: require('../../../assets/images/png/rolls/philadelphia.png'),
             weight: '200 грамм',
             calories: 130,
             ingredients: 'Лосось, сыр "Филадельфия", огурец, авокадо',
@@ -91,7 +91,7 @@ export function FoodList() {
         },
         {
             name: 'Ролл "Сливочная креветка"',
-            image: require('../../assets/images/png/rolls/shrimp.png'),
+            image: require('../../../assets/images/png/rolls/shrimp.png'),
             weight: '200 грамм',
             calories: 130,
             ingredients: 'Лосось, сыр "Филадельфия", огурец, авокадо',
@@ -103,7 +103,7 @@ export function FoodList() {
         },
         {
             name: 'Ролл "Чикен энд Чиз"',
-            image: require('../../assets/images/png/rolls/philadelphia.png'),
+            image: require('../../../assets/images/png/rolls/philadelphia.png'),
             weight: '200 грамм',
             calories: 130,
             ingredients: 'Лосось, сыр "Филадельфия", огурец, авокадо',

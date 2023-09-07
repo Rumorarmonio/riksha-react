@@ -1,7 +1,7 @@
 import styles from './InfoBlock.module.scss'
-import cooking1 from '../../assets/images/png/cooking1.png'
-import cooking2 from '../../assets/images/png/cooking2.png'
-import pattern from '../../assets/images/svg/wavy-pattern-big.svg'
+import cooking1 from '../../../assets/images/png/cooking1.png'
+import cooking2 from '../../../assets/images/png/cooking2.png'
+import pattern from '../../../assets/images/svg/wavy-pattern-big.svg'
 
 export function InfoBlock() {
     return (

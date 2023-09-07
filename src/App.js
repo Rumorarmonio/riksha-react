@@ -1,16 +1,17 @@
 import {Header} from './components/Header/Header'
-import {Sort} from './components/Sort/Sort'
-import {FoodList} from './components/FoodList/FoodList'
-import {InfoBlock} from './components/InfoBlock/InfoBlock'
 import {Footer} from './components/Footer/Footer'
+import {Catalog} from './components/Catalog/Catalog'
+import {Route, Routes} from 'react-router-dom'
+import {NotFound} from './components/NotFound/NotFound'
 
 function App() {
     return (
         <div className="App">
             <Header/>
-            <Sort/>
-            <FoodList/>
-            <InfoBlock/>
+            <Routes>
+                <Route path="/" element={<Catalog/>}/>
+                <Route path='*' element={<NotFound/>} />
+            </Routes>
             <Footer/>
         </div>
     )
