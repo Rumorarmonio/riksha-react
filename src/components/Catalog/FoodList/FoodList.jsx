@@ -126,6 +126,8 @@ export function FoodList() {
 
     return (
         <div className={styles.foodList}>
+            {/*TODO: adaptive grid*/}
+            {/*TODO: side decorations*/}
             <ul className={styles.wrapper}>
                 {elements}
             </ul>

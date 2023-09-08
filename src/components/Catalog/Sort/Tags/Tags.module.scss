@@ -30,8 +30,8 @@
             align-items: center;
             padding: 11px 19px;
             border-radius: 7px;
-            //border: 1px solid variables.$accent;
             border: 1px solid variables.$grey-darker;
+            cursor: pointer;
 
             .icon {
                 width: 24px;
@@ -42,6 +42,10 @@
             .name {
                 font-weight: 500;
             }
+        }
+
+        .active {
+            border: 1px solid variables.$accent;
         }
     }
 }

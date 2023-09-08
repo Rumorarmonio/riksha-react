@@ -17,7 +17,8 @@ function SortType() {
     return (
         <div className={styles.sortType}>
             <span className={styles.supTitle}>Сортировка</span>
-            <div className={styles.button} onClick={() => setOpen(!open)}>
+            <div className={styles.button}
+                 onClick={() => setOpen(!open)}>
                 <span>{sortName}</span>
                 <i className={`${styles.arrow} ${open ? styles.up : styles.down}`}></i>
             </div>
@@ -27,7 +28,11 @@ function SortType() {
                         <ul>
                             {
                                 list.map((name, index) => (
-                                    <li onClick={() => onClickListItem(index)} className={selected === index ? 'active' : ''} key={index}>{name}</li>
+                                    <li className={selected === index ? 'active' : ''}
+                                        onClick={() => onClickListItem(index)}
+                                        key={index}>
+                                        {name}
+                                    </li>
                                 ))
                             }
                         </ul>

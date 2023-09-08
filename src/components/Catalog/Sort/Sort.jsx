@@ -1,5 +1,5 @@
 import styles from './Sort.module.scss'
-import {Tags} from './Categories/Tags'
+import {Tags} from './Tags/Tags'
 import SortType from './SortType/SortType'
 
 export function Sort() {

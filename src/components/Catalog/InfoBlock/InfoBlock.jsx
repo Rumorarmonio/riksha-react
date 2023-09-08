@@ -27,6 +27,7 @@ export function InfoBlock() {
             </div>
             <div className={styles.right}>
                 <div className={styles.container}>
+                    {/*TODO: fix adaptivity*/}
                     <img className={styles.front} src={cooking1} alt="cookech1"/>
                     <div className={styles.back}>
                         <img className={styles.image} src={cooking2} alt="cookech2"/>

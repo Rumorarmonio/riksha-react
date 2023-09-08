@@ -5,7 +5,9 @@ import {HeaderBottom} from './HeaderBottom/HeaderBottom'
 export function Header() {
     return (
         <header className={styles.header}>
+            {/*TODO: fix logo*/}
             <HeaderUpper/>
+            {/*TODO: add adaptivity*/}
             <HeaderBottom/>
         </header>
     )

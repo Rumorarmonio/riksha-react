@@ -31,23 +31,30 @@
             border-width: 0 2px 2px 0;
             display: inline-block;
             padding: 5px;
+            transition-duration: 0.3s;
+            transition-property: transform;
 
             &.up {
+                //transform: rotate3d(0, 0, 0.5, 225deg);
                 transform: rotate(-135deg);
+                //transform: rotateX(180deg);
             }
 
             &.down {
+                //transform: rotate3d(0, 0, 0.5, 45deg);
                 transform: rotate(45deg);
+                //transform: rotateX(0deg);
             }
         }
     }
 
     .popup {
         position: absolute;
+        z-index: 1;
         right: 0;
         margin-top: 75px;
         background: #ffffff;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
         border-radius: 10px;
         overflow: hidden;
         padding: 10px 0;
