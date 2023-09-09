@@ -9,5 +9,9 @@
         flex-wrap: wrap;
         max-width: 1223px;
         margin: auto;
+
+        @media (max-width: variables.$bp-1275) {
+            justify-content: center;
+        }
     }
 }

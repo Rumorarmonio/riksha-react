@@ -5,6 +5,11 @@
     flex-direction: column;
     gap: 7px;
     position: relative;
+    user-select: none;
+
+    @media (max-width: variables.$bp-1275) {
+        align-items: center;
+    }
 
     .supTitle {
         font-weight: 500;
@@ -23,7 +28,6 @@
 
         span {
             font-weight: 500;
-            user-select: none;
         }
 
         .arrow {

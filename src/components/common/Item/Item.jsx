@@ -58,13 +58,17 @@ export function Item({item, index, today}) {
             <img className={styles.image} src={item.image} alt={item.name}/>
             {rightColumn}
             <div className={styles.container}>
-                <div className={styles.details}>
-                    <span className={styles.detail}>{item.weight}</span>
-                    <i className={styles.dot}>&#8226;</i>
-                    <span className={styles.detail}>{item.calories} Ккал</span>
+
+                <div className={styles.upper}>
+                    <div className={styles.details}>
+                        <span className={styles.detail}>{item.weight} г</span>
+                        <i className={styles.dot}>&#8226;</i>
+                        <span className={styles.detail}>{item.calories} Ккал</span>
+                    </div>
+                    <h3 className={styles.name}>{item.name}</h3>
+                    <span className={styles.ingredients}>{item.ingredients}</span>
                 </div>
-                <h3 className={styles.name}>{item.name}</h3>
-                <span className={styles.ingredients}>{item.ingredients}</span>
+
                 <div className={styles.bottom}>
                     <div className={styles.price}>
                         <span className={styles.old}>{item.oldPrice && item.oldPrice + '\u20BD'}&#160;</span>

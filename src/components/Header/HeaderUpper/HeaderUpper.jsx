@@ -11,6 +11,7 @@ export function HeaderUpper() {
                 <a className={styles.logo} href="https://www.google.com/">
                     <img src={logo} alt="logo"/>
                 </a>
+                <div className={styles.empty}></div>
                 <div className={styles.main}>
                     <ul className={styles.links}>
                         <li className={styles.link}>

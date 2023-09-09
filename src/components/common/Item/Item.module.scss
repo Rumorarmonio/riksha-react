@@ -3,13 +3,22 @@
 .item {
     position: relative;
     width: 392px;
-    height: 479px;
     background-color: #fff;
+    padding-bottom: 15px;
+
+    @media (max-width: variables.$bp-1275) {
+        margin: 0 20px;
+    }
+
+    @media (max-width: variables.$bp-538) {
+        margin: 0;
+    }
 
     .image {
         width: 392px;
         height: 256px;
         margin-bottom: 30px;
+        object-fit: cover;
     }
 
     .left {
@@ -24,11 +33,13 @@
         }
 
         .label {
+            color: #fff;
             display: block;
             font-size: 12px;
             font-weight: 600;
             margin-bottom: 5px;
             text-align: center;
+            -webkit-text-stroke: 1px rgba(variables.$accent, .3);
         }
     }
 
@@ -47,31 +58,36 @@
     .container {
         padding: 0 25px;
 
-        .details {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 11px;
+        .upper {
+            height: 150px;
 
-            .detail {
-                color: variables.$text-grey;
+            .details {
+                display: flex;
+                gap: 5px;
+                margin-bottom: 11px;
+
+                .detail {
+                    color: variables.$text-grey;
+                }
+
+                .dot {
+                    font-size: 25px;
+                    color: variables.$accent;
+                    line-height: 13px;
+                }
             }
 
-            .dot {
-                font-size: 25px;
-                color: variables.$accent;
-                line-height: 13px;
+            .name {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 15px;
             }
-        }
 
-        .name {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .ingredients {
-            display: block;
-            margin-bottom: 46px;
+            .ingredients {
+                display: block;
+                margin-bottom: 30px;
+                height: 45px;
+            }
         }
 
         .bottom {

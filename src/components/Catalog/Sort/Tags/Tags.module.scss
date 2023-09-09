@@ -3,6 +3,14 @@
 .tags {
     width: 100%;
     max-width: 927px;
+    user-select: none;
+
+    @media (max-width: variables.$bp-1275) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15px;
+    }
 
     .breadcrumbs {
         display: block;
@@ -32,6 +40,10 @@
             border-radius: 7px;
             border: 1px solid variables.$grey-darker;
             cursor: pointer;
+
+            @media (max-width: variables.$bp-538) {
+                flex-grow: 1;
+            }
 
             .icon {
                 width: 24px;
