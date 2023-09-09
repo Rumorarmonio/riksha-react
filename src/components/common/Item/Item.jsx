@@ -1,7 +1,7 @@
 import styles from './Item.module.scss'
-import {Button} from '../Button/Button'
+import Button from '../Button/Button'
 
-export function Item({item, index, today}) {
+export default function Item({item, id, today}) {
     let leftColumn = null
     if (item.characteristics) {
         leftColumn =
@@ -31,21 +31,21 @@ export function Item({item, index, today}) {
             <ul className={styles.right}>
                 {
                     ordersCheck &&
-                    <li key={index}>
+                    <li key={id}>
                         <img className={styles.image} src={require('../../../assets/images/svg/attributes/top.svg').default} alt="top"/>
                     </li>
                 }
 
                 {
                     timeCheck &&
-                    <li key={index + 1}>
+                    <li key={id + 1}>
                         <img className={styles.image} src={require('../../../assets/images/svg/attributes/new.svg').default} alt="new"/>
                     </li>
                 }
 
                 {
                     saleCheck &&
-                    <li key={index + 2}>
+                    <li key={id + 2}>
                         <img className={styles.image} src={require('../../../assets/images/svg/attributes/discount.svg').default} alt="discount"/>
                     </li>
                 }
@@ -53,7 +53,7 @@ export function Item({item, index, today}) {
     }
 
     return (
-        <li className={styles.item} key={index}>
+        <li className={styles.item} key={id}>
             {leftColumn}
             <img className={styles.image} src={item.image} alt={item.name}/>
             {rightColumn}
@@ -74,8 +74,8 @@ export function Item({item, index, today}) {
                         <span className={styles.old}>{item.oldPrice && item.oldPrice + '\u20BD'}&#160;</span>
                         <span className={styles.new}>{item.price} &#8381;</span>
                     </div>
-                    <Button link="https://www.google.com/"
-                            label='Заказать'
+                    <Button link="/details"
+                            label="Заказать"
                             style={{
                                 marginTop: '7px',
                                 padding: '13px 60px'

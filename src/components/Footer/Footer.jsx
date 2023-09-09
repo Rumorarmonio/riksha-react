@@ -1,78 +1,52 @@
-import styles from './Footer.module.scss'
-import facebook from '../../assets/images/svg/socials/facebook.svg'
-import instagram from '../../assets/images/svg/socials/instagram.svg'
-import vk from '../../assets/images/svg/socials/vk.svg'
-import logo from '../../assets/images/png/logo-footer.png'
+import {Link} from 'react-router-dom'
 
-export function Footer() {
+import styles from './Footer.module.scss'
+import logo from '../../assets/images/png/logo-footer.png'
+import {categories, navigation, socials} from '../../assets/data/menus'
+
+export default function Footer() {
+    const categoryElements =
+        categories.map(({name, url}, index) => (
+            <li key={index}>
+                <Link to={url}>
+                    {name}
+                </Link>
+            </li>
+        ))
+
+    const navigationElements =
+        navigation.slice(0, 3).map(({name, url}, index) => (
+            <li key={index}>
+                <Link to={url}>{name}</Link>
+            </li>
+        ))
+
+    const socialElements =
+        socials.map(({name, icon, url}, index) => (
+            <li key={index}>
+                <a target="_blank" href={url}>
+                    <img src={icon} alt={name}/>
+                </a>
+            </li>
+        ))
+
     return (
         <div className={styles.footer}>
             <div className={styles.wrapper}>
-                <a className={styles.logo} href="https://www.google.com/">
+                <Link className={styles.logo} to="/">
                     <img src={logo} alt="logo"/>
-                </a>
+                </Link>
                 <div className={styles.left}>
                     <ul className={styles.links}>
-                        <li>
-                            <a href="https://www.google.com/">О нас</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Доставка и оплата</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Контакты</a>
-                        </li>
+                        {navigationElements}
                     </ul>
                     <ul className={styles.socials}>
-                        <li>
-                            <a href="https://www.google.com/">
-                                <img src={facebook} alt="facebook"/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">
-                                <img src={instagram} alt="instagram"/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">
-                                <img src={vk} alt="vk"/>
-                            </a>
-                        </li>
+                        {socialElements}
                     </ul>
                 </div>
                 <div className={styles.center}>
                     <ul className={styles.links}>
-                        <li>
-                            <a href="https://www.google.com/">Пицца</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Суши</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Роллы</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Сеты</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Воки</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Супы</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Салаты</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Десерты</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Напитки</a>
-                        </li>
-                        <li>
-                            <a href="https://www.google.com/">Акции</a>
-                        </li>
+                        {categoryElements}
                     </ul>
                 </div>
                 <div className={styles.right}>

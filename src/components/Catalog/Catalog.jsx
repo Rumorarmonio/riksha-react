@@ -1,8 +1,8 @@
-import {InfoBlock} from './InfoBlock/InfoBlock'
-import {Sort} from './Sort/Sort'
-import {FoodList} from './FoodList/FoodList'
+import InfoBlock from './InfoBlock/InfoBlock'
+import Sort from './Sort/Sort'
+import FoodList from './FoodList/FoodList'
 
-export function Catalog() {
+export default function Catalog() {
     return (
         <>
             <Sort/>

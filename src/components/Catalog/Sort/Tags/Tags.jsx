@@ -1,7 +1,9 @@
 import React from 'react'
+
 import styles from './Tags.module.scss'
 
-export function Tags() {
+// TODO: move to menus.js
+export default function Tags() {
     const ingredients = [
         {
             id: 0,

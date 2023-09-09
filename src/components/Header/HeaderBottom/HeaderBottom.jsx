@@ -1,56 +1,16 @@
+import {Link} from 'react-router-dom'
+
 import styles from './HeaderBottom.module.scss'
+import {categories} from '../../../assets/data/menus'
 
-export function HeaderBottom() {
-    const categories = [
-        {
-            name: 'Пицца',
-            icon: require('../../../assets/images/svg/categories/pizza.svg').default
-        },
-        {
-            name: 'Суши',
-            icon: require('../../../assets/images/svg/categories/sushi.svg').default
-        },
-        {
-            name: 'Роллы',
-            icon: require('../../../assets/images/svg/categories/rolls.svg').default
-        },
-        {
-            name: 'Сеты',
-            icon: require('../../../assets/images/svg/categories/sets.svg').default
-        },
-        {
-            name: 'Воки',
-            icon: require('../../../assets/images/svg/categories/wok.svg').default
-        },
-        {
-            name: 'Супы',
-            icon: require('../../../assets/images/svg/categories/soups.svg').default
-        },
-        {
-            name: 'Салаты',
-            icon: require('../../../assets/images/svg/categories/salads.svg').default
-        },
-        {
-            name: 'Десерты',
-            icon: require('../../../assets/images/svg/categories/dessert.svg').default
-        },
-        {
-            name: 'Напитки',
-            icon: require('../../../assets/images/svg/categories/beverages.svg').default
-        },
-        {
-            name: 'Акции',
-            icon: require('../../../assets/images/svg/categories/promotions.svg').default
-        },
-    ]
-
-    const categoryElements =
-        categories.map(({name, icon}, index) => (
+export default function HeaderBottom() {
+    const elements =
+        categories.map(({name, icon, url}, index) => (
             <li key={index}>
-                <a className={styles.category} href="https://www.google.com/">
+                <Link className={styles.category} to={url}>
                     <img className={styles.icon} src={icon} alt={name}/>
                     <span className={styles.name}>{name}</span>
-                </a>
+                </Link>
             </li>
         ))
 
@@ -58,7 +18,7 @@ export function HeaderBottom() {
         <div className={styles.bottom}>
             <div className={styles.wrapper}>
                 <ul className={styles.categories}>
-                    {categoryElements}
+                    {elements}
                 </ul>
             </div>
         </div>

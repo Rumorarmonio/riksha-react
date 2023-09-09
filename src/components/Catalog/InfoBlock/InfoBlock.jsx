@@ -3,7 +3,7 @@ import cooking1 from '../../../assets/images/png/cooking1.png'
 import cooking2 from '../../../assets/images/png/cooking2.png'
 import pattern from '../../../assets/images/svg/wavy-pattern-big.svg'
 
-export function InfoBlock() {
+export default function InfoBlock() {
     return (
         <div className={styles.infoBlock}>
             <div className={styles.left}>
@@ -27,7 +27,6 @@ export function InfoBlock() {
             </div>
             <div className={styles.right}>
                 <div className={styles.container}>
-                    {/*TODO: fix adaptivity*/}
                     <img className={styles.front} src={cooking1} alt="cookech1"/>
                     <div className={styles.back}>
                         <img className={styles.image} src={cooking2} alt="cookech2"/>
