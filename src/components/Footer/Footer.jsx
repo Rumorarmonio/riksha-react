@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 
 import styles from './Footer.module.scss'
 import logo from '../../assets/images/png/logo-footer.png'
-import {categories, navigation, socials} from '../../assets/data/menus'
+import {categories, navigation, socials} from '../../assets/data/arrays'
 
 export default function Footer() {
     const categoryElements =

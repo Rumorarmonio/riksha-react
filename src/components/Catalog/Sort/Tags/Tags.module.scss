@@ -3,7 +3,13 @@
 .tags {
     width: 100%;
     max-width: 927px;
-    user-select: none;
+
+    .label {
+        display: block;
+        font-weight: 500;
+        color: variables.$text-grey;
+        margin-bottom: 7px;
+    }
 
     @media (max-width: variables.$bp-1275) {
         display: flex;
@@ -32,6 +38,11 @@
         flex-wrap: wrap;
         gap: 5px;
         margin-top: 5px;
+        user-select: none;
+
+        &:first-of-type {
+            margin-bottom: 10px;
+        }
 
         .tag {
             display: flex;

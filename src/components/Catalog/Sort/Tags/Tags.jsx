@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './Tags.module.scss'
 
-// TODO: move to menus.js
+// TODO: move to arrays.js
 export default function Tags() {
     const ingredients = [
         {
@@ -108,9 +108,11 @@ export default function Tags() {
         <div className={styles.tags}>
             <span className={styles.breadcrumbs}>Главная&nbsp;&nbsp;//&nbsp;&nbsp;<b>Суши</b></span>
             <h2 className={styles.title}>Суши</h2>
+            <span className={styles.label}>Ингредиенты</span>
             <ul className={styles.list}>
                 {createElements(ingredientState, setIngredientState)}
             </ul>
+            <span className={styles.label}>Характеристики</span>
             <ul className={styles.list}>
                 {createElements(attributeState, setAttributeState)}
             </ul>

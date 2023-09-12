@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 
 import styles from './HeaderBottom.module.scss'
-import {categories} from '../../../assets/data/menus'
+import {categories} from '../../../assets/data/arrays'
 
 export default function HeaderBottom() {
     const elements =

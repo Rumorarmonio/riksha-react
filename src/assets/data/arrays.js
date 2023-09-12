@@ -1,9 +1,24 @@
 export const navigation = [
-    {name: 'О нас', url: '/NotFound'},
-    {name: 'Доставка и оплата', url: '/NotFound'},
-    {name: 'Контакты', url: '/NotFound'},
-    {name: 'Бонусы', url: '/NotFound'},
-    {name: 'Вакансии', url: '/NotFound'}
+    {
+        name: 'О нас',
+        url: '/NotFound'
+    },
+    {
+        name: 'Доставка и оплата',
+        url: '/NotFound'
+    },
+    {
+        name: 'Контакты',
+        url: '/NotFound'
+    },
+    {
+        name: 'Бонусы',
+        url: '/NotFound'
+    },
+    {
+        name: 'Вакансии',
+        url: '/NotFound'
+    }
 ]
 
 export const categories = [
@@ -76,3 +91,61 @@ export const socials = [
         url: 'https://vk.com/'
     }
 ]
+
+export const sortTypes = [
+    {
+        name: 'По умолчанию',
+        sortProperty: ''
+    },
+    {
+        name: 'По популярности (DESC)',
+        sortProperty: 'orders'
+    },
+    {
+        name: 'По популярности (ASC)',
+        sortProperty: '-orders'
+    },
+    {
+        name: 'По рейтингу (ASC)',
+        sortProperty: 'rating'
+    },
+    {
+        name: 'По рейтингу (DESC)',
+        sortProperty: '-rating'
+    },
+    {
+        name: 'По цене (DESC)',
+        sortProperty: 'price'
+    },
+    {
+        name: 'По цене (ASC)',
+        sortProperty: '-price'
+    },
+    {
+        name: 'По алфавиту (DESC)',
+        sortProperty: 'name'
+    },
+    {
+        name: 'По алфавиту (ASC)',
+        sortProperty: '-name'
+    }
+]
+
+export const chars = {
+    SPICY: 'spicy',
+    BAKED: 'baked',
+    VEGAN: 'vegan'
+}
+
+export const categoryEnum = {
+    PIZZA: 'pizza',
+    SUSHI: 'sushi',
+    ROLLS: 'rolls',
+    SETS: 'sets',
+    WOK: 'wok',
+    SOUPS: 'soups',
+    SALADS: 'salads',
+    DESSERTS: 'desserts',
+    BEVERAGES: 'beverages',
+    DISCOUNTS: 'discounts'
+}

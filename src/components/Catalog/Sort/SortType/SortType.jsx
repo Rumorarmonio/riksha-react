@@ -1,16 +1,12 @@
 import React from 'react'
 import styles from './SortType.module.scss'
+import {sortTypes} from '../../../../assets/data/arrays'
 
-function SortType() {
+function SortType({value, onChange}) {
     const [open, setOpen] = React.useState(false)
-    const [selected, setSelected] = React.useState(0)
-
-    const list = ['По умолчанию', 'популярности (DESC)', 'популярности (ASC)', 'цене (DESC)', 'цене (ASC)', 'алфавиту (DESC)', 'алфавиту (ASC)']
-
-    let sortName = list[selected]
 
     const onClickListItem = (i) => {
-        setSelected(i)
+        onChange(i)
         setOpen(false)
     }
 
@@ -19,7 +15,7 @@ function SortType() {
             <span className={styles.supTitle}>Сортировка</span>
             <div className={styles.button}
                  onClick={() => setOpen(!open)}>
-                <span>{sortName}</span>
+                <span>{value.name}</span>
                 <i className={`${styles.arrow} ${open ? styles.up : styles.down}`}></i>
             </div>
             {
@@ -27,11 +23,11 @@ function SortType() {
                     <div className={styles.popup}>
                         <ul>
                             {
-                                list.map((name, index) => (
-                                    <li className={selected === index ? 'active' : ''}
-                                        onClick={() => onClickListItem(index)}
+                                sortTypes.map((type, index) => (
+                                    <li className={value.sortProperty === index ? 'active' : ''}
+                                        onClick={() => onClickListItem(type)}
                                         key={index}>
-                                        {name}
+                                        {type.name}
                                     </li>
                                 ))
                             }

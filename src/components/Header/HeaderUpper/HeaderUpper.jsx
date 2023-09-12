@@ -5,7 +5,7 @@ import phone from '../../../assets/images/svg/header/phone-fill.svg'
 import cart from '../../../assets/images/svg/header/cart.svg'
 import profile from '../../../assets/images/svg/header/profile.svg'
 import logo from '../../../assets/images/png/logo.png'
-import {navigation} from '../../../assets/data/menus'
+import {navigation} from '../../../assets/data/arrays'
 
 export default function HeaderUpper() {
     const elements =
