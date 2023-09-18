@@ -24,7 +24,7 @@ export default function Footer() {
     const socialElements =
         socials.map(({name, icon, url}, index) => (
             <li key={index}>
-                <a target="_blank" href={url}>
+                <a href={url}>
                     <img src={icon} alt={name}/>
                 </a>
             </li>

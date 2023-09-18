@@ -1,11 +1,11 @@
 import styles from './NotFound.module.scss'
-import notFount from '../../assets/images/svg/404.svg'
+import notFound from '../../assets/images/svg/404.svg'
 import Button from '../common/Button/Button'
 
 export default function NotFound() {
     return (
         <section className={styles.notFound}>
-            <img src={notFount}/>
+            <img src={notFound} alt='404'/>
             <h1>Страница не найдена</h1>
             <p>Извините, но страницу, которую Вы пытаетесь найти - не существует. Предлагаем Вам перейти на Главную страницу</p>
             <Button link="/"
