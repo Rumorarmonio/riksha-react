@@ -3,6 +3,8 @@ import Sort from './Sort/Sort'
 import FoodList from './FoodList/FoodList'
 import React from 'react'
 
+export const SearchContext = React.createContext()
+
 export default function Catalog() {
     const [items, setItems] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(true)
@@ -36,17 +38,22 @@ export default function Catalog() {
 
     return (
         <>
-            <Sort categoryId={categoryId}
-                  onChangeCategory={(index) => setCategoryId(index)}
-                  sortType={sortType}
-                  onChangeSort={(index) => setSortType(index)}
-                  searchValue={searchValue}
-                  setSearchValue={setSearchValue}
-            />
-            <FoodList
-                items={items} isLoading={isLoading}
-                onChangePage={number => setCurrentPage(number)}
-            />
+            <SearchContext.Provider
+                value={{
+                    // categoryId,
+                    // setCategoryId: (index) => setCategoryId(index),
+                    sortType,
+                    onChangeSort: (index) => setSortType(index),
+                    searchValue,
+                    setSearchValue
+                }}
+            >
+                <Sort/>
+                <FoodList
+                    items={items} isLoading={isLoading}
+                    onChangePage={number => setCurrentPage(number)}
+                />
+            </SearchContext.Provider>
             <InfoBlock/>
         </>
     )
