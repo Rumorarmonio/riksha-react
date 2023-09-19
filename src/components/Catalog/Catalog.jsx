@@ -13,21 +13,25 @@ export default function Catalog() {
         sortProperty: ''
     })
 
+    const [searchValue, setSearchValue] = React.useState('')
+
     React.useEffect(() => {
         setIsLoading(true)
 
         const sortBy = sortType.sortProperty.replace('-', '')
         const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc'
         // const category = categoryId > 0 ? `category=${categoryId}` : ''
+        // TODO: search by name
+        const search = searchValue ? `&search=${searchValue}` : ''
 
-        fetch(`https://64db1b63593f57e435b07477.mockapi.io/items?sortBy=${sortBy}&order=${order}`)
+        fetch(`https://64db1b63593f57e435b07477.mockapi.io/items?sortBy=${sortBy}&order=${order}${search}`)
         .then(res => res.json())
         .then(arr => {
             setItems(arr)
             setIsLoading(false)
         })
-        window.scrollTo(0, 0)
-    }, [categoryId, sortType])
+        // window.scrollTo(0, 0)
+    }, [categoryId, sortType, searchValue])
 
     return (
         <>
@@ -35,6 +39,8 @@ export default function Catalog() {
                   onChangeCategory={(index) => setCategoryId(index)}
                   sortType={sortType}
                   onChangeSort={(index) => setSortType(index)}
+                  searchValue={searchValue}
+                  setSearchValue={setSearchValue}
             />
             <FoodList items={items} isLoading={isLoading}/>
             <InfoBlock/>

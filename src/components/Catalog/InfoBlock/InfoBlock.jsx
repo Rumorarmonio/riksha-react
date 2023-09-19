@@ -27,10 +27,10 @@ export default function InfoBlock() {
             </div>
             <div className={styles.right}>
                 <div className={styles.container}>
-                    <img className={styles.front} src={cooking1} alt="cookech1"/>
+                    <img className={styles.front} src={cooking1} alt="cookech1.svg"/>
                     <div className={styles.back}>
-                        <img className={styles.image} src={cooking2} alt="cookech2"/>
-                        <img className={styles.pattern} src={pattern} alt="pattern"/>
+                        <img className={styles.image} src={cooking2} alt="cookech2.svg"/>
+                        <img className={styles.pattern} src={pattern} alt="pattern.svg"/>
                     </div>
                 </div>
             </div>

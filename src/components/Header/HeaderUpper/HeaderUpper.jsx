@@ -19,7 +19,7 @@ export default function HeaderUpper() {
         <div className={styles.upper}>
             <div className={styles.wrapper}>
                 <Link className={styles.logo} to="/">
-                    <img src={logo} alt="logo"/>
+                    <img src={logo} alt="logo.svg"/>
                 </Link>
                 <div className={styles.empty}></div>
                 <div className={styles.main}>
@@ -28,7 +28,7 @@ export default function HeaderUpper() {
                     </ul>
                     <div className={styles.contacts}>
                         <div className={styles.phone}>
-                            <img className={styles.icon} src={phone} alt={'phone'}/>
+                            <img className={styles.icon} src={phone} alt='phone.svg'/>
                             <a className={styles.number} href="tel:74956171424">+7 (495) 617-14-24</a>
                         </div>
                         <span className={styles.schedule}>c 10:00 до 23:00</span>

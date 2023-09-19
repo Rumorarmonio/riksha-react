@@ -15,7 +15,7 @@ export default function Item({item, id, today}) {
                                         <li key={index}>
                                             <img className={styles.image}
                                                  src={require(`../../../assets/images/svg/attributes/${name}.svg`)}
-                                                 alt={name.toString()}
+                                                 alt={`${name}.svg`}
                                             />
                                             <span className={styles.label}>{name}</span>
                                         </li>
@@ -45,21 +45,21 @@ export default function Item({item, id, today}) {
                     {
                         ordersCheck &&
                         <li key={id}>
-                            <img className={styles.image} src={require('../../../assets/images/svg/attributes/top.svg').default} alt="top"/>
+                            <img className={styles.image} src={require('../../../assets/images/svg/attributes/top.svg').default} alt="top.svg"/>
                         </li>
                     }
 
                     {
                         timeCheck &&
                         <li key={id + 1}>
-                            <img className={styles.image} src={require('../../../assets/images/svg/attributes/new.svg').default} alt="new"/>
+                            <img className={styles.image} src={require('../../../assets/images/svg/attributes/new.svg').default} alt="new.svg"/>
                         </li>
                     }
 
                     {
                         saleCheck &&
                         <li key={id + 2}>
-                            <img className={styles.image} src={require('../../../assets/images/svg/attributes/discount.svg').default} alt="discount"/>
+                            <img className={styles.image} src={require('../../../assets/images/svg/attributes/discount.svg').default} alt="discount.svg"/>
                         </li>
                     }
                 </ul>

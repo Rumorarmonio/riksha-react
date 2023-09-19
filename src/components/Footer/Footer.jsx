@@ -25,7 +25,7 @@ export default function Footer() {
         socials.map(({name, icon, url}, index) => (
             <li key={index}>
                 <a href={url}>
-                    <img src={icon} alt={name}/>
+                    <img src={icon} alt={`${name}.svg`}/>
                 </a>
             </li>
         ))
@@ -34,7 +34,7 @@ export default function Footer() {
         <div className={styles.footer}>
             <div className={styles.wrapper}>
                 <Link className={styles.logo} to="/">
-                    <img src={logo} alt="logo"/>
+                    <img src={logo} alt="logo.svg"/>
                 </Link>
                 <div className={styles.left}>
                     <ul className={styles.links}>

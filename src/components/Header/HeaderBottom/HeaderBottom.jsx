@@ -8,7 +8,7 @@ export default function HeaderBottom() {
         categories.map(({name, icon, url}, index) => (
             <li key={index}>
                 <Link className={styles.category} to={url}>
-                    <img className={styles.icon} src={icon} alt={name}/>
+                    <img className={styles.icon} src={icon} alt={`${name}.svg`}/>
                     <span className={styles.name}>{name}</span>
                 </Link>
             </li>

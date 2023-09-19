@@ -5,7 +5,7 @@ import Button from '../common/Button/Button'
 export default function NotFound() {
     return (
         <section className={styles.notFound}>
-            <img src={notFound} alt='404'/>
+            <img src={notFound} alt='404.svg'/>
             <h1>Страница не найдена</h1>
             <p>Извините, но страницу, которую Вы пытаетесь найти - не существует. Предлагаем Вам перейти на Главную страницу</p>
             <Button link="/"
