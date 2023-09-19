@@ -31,10 +31,7 @@ export default function Item({item, id, today}) {
     }
 
     // three months
-    // TODO: fix new icon
     const timeCheck = today - Date.parse(item.dateAdded) < 1000/*ms*/ * 60/*s*/ * 60/*min*/ * 24/*h*/ * 30/*days*/ * 3/*months*/
-    console.log(today)
-    console.log(timeCheck)
     const ordersCheck = item.orders >= 800
     const saleCheck = item.oldPrice !== null
     let rightColumn = null

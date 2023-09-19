@@ -1,14 +1,14 @@
 @use '../../../assets/styles/variables';
 
 .foodList {
-    margin-bottom: 119px;
+    margin-bottom: 80px;
 
     .wrapper {
         display: flex;
         flex-wrap: wrap;
         gap: 24px;
-        justify-content: center;
+        justify-content: flex-start;
         max-width: 1224px;
-        margin: auto;
+        margin: 0 auto 50px auto;
     }
 }

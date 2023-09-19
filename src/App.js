@@ -8,6 +8,7 @@ import Cart from './components/Cart/Cart'
 import Details from './components/Details/Details'
 
 // TODO: change project structure (or not) :)
+// TODO: fix console warnings
 function App() {
     return (
         <div className="App">

@@ -2,8 +2,9 @@ import React from 'react'
 import styles from './FoodList.module.scss'
 import Item from '../../common/Item/Item'
 import Skeleton from '../../common/Item/Skeleton'
+import {Pagination} from './Pagination/Pagination'
 
-export default function FoodList({items, isLoading}) {
+export default function FoodList({items, isLoading, onChangePage}) {
     const today = new Date()
 
     const elements =
@@ -18,6 +19,7 @@ export default function FoodList({items, isLoading}) {
             <ul className={styles.wrapper}>
                 {elements}
             </ul>
+            <Pagination onChangePage={onChangePage}/>
         </div>
     )
 }
