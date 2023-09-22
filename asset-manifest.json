@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/riksha-react/static/css/main.3ab391dd.css",
-    "main.js": "/riksha-react/static/js/main.e80a1a25.js",
+    "main.js": "/riksha-react/static/js/main.d7a06e63.js",
     "static/media/404.svg": "/riksha-react/static/media/404.2212aba9076b1b489cf80ab988dc7e9f.svg",
     "static/media/wavy-pattern-big.svg": "/riksha-react/static/media/wavy-pattern-big.cf7fd7c15b1fb3e5135185a350eb5a52.svg",
     "static/media/wavy-pattern.svg": "/riksha-react/static/media/wavy-pattern.08b698419fcfb2f33e54.svg",
@@ -111,10 +111,10 @@
     "static/media/search.svg": "/riksha-react/static/media/search.4270a1347249c07c19bf4ec0fbcba4c4.svg",
     "static/media/close.svg": "/riksha-react/static/media/close.cbbfefc9a99f6a29312f7c80fac2915e.svg",
     "main.3ab391dd.css.map": "/riksha-react/static/css/main.3ab391dd.css.map",
-    "main.e80a1a25.js.map": "/riksha-react/static/js/main.e80a1a25.js.map"
+    "main.d7a06e63.js.map": "/riksha-react/static/js/main.d7a06e63.js.map"
   },
   "entrypoints": [
     "static/css/main.3ab391dd.css",
-    "static/js/main.e80a1a25.js"
+    "static/js/main.d7a06e63.js"
   ]
 }
