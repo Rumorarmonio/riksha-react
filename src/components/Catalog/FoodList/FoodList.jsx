@@ -4,7 +4,7 @@ import Item from '../../common/Item/Item'
 import Skeleton from '../../common/Item/Skeleton'
 import {Pagination} from './Pagination/Pagination'
 
-export default function FoodList({items, isLoading, onChangePage}) {
+export default function FoodList({items, isLoading, currentPage, onChangePage}) {
     const today = new Date()
 
     const elements =
@@ -19,7 +19,7 @@ export default function FoodList({items, isLoading, onChangePage}) {
             <ul className={styles.wrapper}>
                 {elements}
             </ul>
-            <Pagination onChangePage={onChangePage}/>
+            <Pagination currentPage={currentPage} onChangePage={onChangePage}/>
         </div>
     )
 }

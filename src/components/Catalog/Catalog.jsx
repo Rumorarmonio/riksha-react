@@ -5,12 +5,12 @@ import {useDispatch, useSelector} from 'react-redux'
 import InfoBlock from './InfoBlock/InfoBlock'
 import Sort from './Sort/Sort'
 import FoodList from './FoodList/FoodList'
-import {setCategoryId} from '../../redux/slices/filterSlice'
+import {setCategoryId, setCurrentPage} from '../../redux/slices/filterSlice'
 
 export const FilterContext = React.createContext()
 
 export default function Catalog() {
-    const {categoryId, sortType} = useSelector(state => state.filter)
+    const {categoryId, sortType, currentPage} = useSelector(state => state.filter)
     const dispatch = useDispatch()
 
     const onChangeCategory = (id) => {
@@ -18,11 +18,14 @@ export default function Catalog() {
         console.log('onChangeCategory', categoryId)
     }
 
+    const onChangePage = number => {
+        dispatch(setCurrentPage(number))
+    }
+
     const [items, setItems] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(true)
 
     // TODO: count pages in code and remove hardcoded number
-    const [currentPage, setCurrentPage] = React.useState(1)
     const [searchValue, setSearchValue] = React.useState('')
 
     React.useEffect(() => {
@@ -49,14 +52,15 @@ export default function Catalog() {
                 value={{
                     categoryId,
                     onChangeCategory,
-                    searchValue,
                     setSearchValue
                 }}
             >
                 <Sort/>
                 <FoodList
-                    items={items} isLoading={isLoading}
-                    onChangePage={number => setCurrentPage(number)}
+                    items={items}
+                    isLoading={isLoading}
+                    currentPage={currentPage}
+                    onChangePage={onChangePage}
                 />
             </FilterContext.Provider>
             <InfoBlock/>
