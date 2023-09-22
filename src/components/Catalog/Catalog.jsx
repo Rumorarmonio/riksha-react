@@ -1,8 +1,10 @@
+import React from 'react'
+import axios from 'axios'
+import {useDispatch, useSelector} from 'react-redux'
+
 import InfoBlock from './InfoBlock/InfoBlock'
 import Sort from './Sort/Sort'
 import FoodList from './FoodList/FoodList'
-import React from 'react'
-import {useDispatch, useSelector} from 'react-redux'
 import {setCategoryId} from '../../redux/slices/filterSlice'
 
 export const FilterContext = React.createContext()
@@ -32,12 +34,12 @@ export default function Catalog() {
         // TODO: search by name
         const search = searchValue ? `&search=${searchValue}` : ''
 
-        fetch(`https://64db1b63593f57e435b07477.mockapi.io/items?page=${currentPage}&limit=9&sortBy=${sortBy}&order=${order}${search}`)
-        .then(res => res.json())
-        .then(arr => {
-            setItems(arr)
-            setIsLoading(false)
-        })
+        axios.get(`https://64db1b63593f57e435b07477.mockapi.io/items?page=${currentPage}&limit=9&sortBy=${sortBy}&order=${order}${search}`)
+        .then(response => {
+                setItems(response.data)
+                setIsLoading(false)
+            }
+        )
         // window.scrollTo(0, 0)
     }, [categoryId, sortType, searchValue, currentPage])
 
