@@ -2,18 +2,23 @@ import InfoBlock from './InfoBlock/InfoBlock'
 import Sort from './Sort/Sort'
 import FoodList from './FoodList/FoodList'
 import React from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {setCategoryId} from '../../redux/slices/filterSlice'
 
-export const SearchContext = React.createContext()
+export const FilterContext = React.createContext()
 
 export default function Catalog() {
+    const {categoryId, sortType} = useSelector(state => state.filter)
+    const dispatch = useDispatch()
+
+    const onChangeCategory = (id) => {
+        dispatch(setCategoryId(id))
+        console.log('onChangeCategory', categoryId)
+    }
+
     const [items, setItems] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(true)
 
-    const [categoryId, setCategoryId] = React.useState(0)
-    const [sortType, setSortType] = React.useState({
-        name: 'По умолчанию',
-        sortProperty: ''
-    })
     // TODO: count pages in code and remove hardcoded number
     const [currentPage, setCurrentPage] = React.useState(1)
     const [searchValue, setSearchValue] = React.useState('')
@@ -38,12 +43,10 @@ export default function Catalog() {
 
     return (
         <>
-            <SearchContext.Provider
+            <FilterContext.Provider
                 value={{
-                    // categoryId,
-                    // setCategoryId: (index) => setCategoryId(index),
-                    sortType,
-                    onChangeSort: (index) => setSortType(index),
+                    categoryId,
+                    onChangeCategory,
                     searchValue,
                     setSearchValue
                 }}
@@ -53,7 +56,7 @@ export default function Catalog() {
                     items={items} isLoading={isLoading}
                     onChangePage={number => setCurrentPage(number)}
                 />
-            </SearchContext.Provider>
+            </FilterContext.Provider>
             <InfoBlock/>
         </>
     )

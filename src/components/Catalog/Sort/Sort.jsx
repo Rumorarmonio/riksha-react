@@ -3,11 +3,7 @@ import Tags from './Tags/Tags'
 import SortType from './SortType/SortType'
 import {Search} from './Search/Search'
 
-export default function Sort(
-    {
-        categoryId, onChangeCategory,
-    }
-) {
+export default function Sort() {
     return (
         <div className={styles.sort}>
             <div className={styles.wrapper}>

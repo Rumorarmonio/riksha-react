@@ -2,10 +2,10 @@ import React from 'react'
 import styles from './Search.module.scss'
 import search from '../../../../assets/images/svg/search/search.svg'
 import close from '../../../../assets/images/svg/search/close.svg'
-import {SearchContext} from '../../Catalog'
+import {FilterContext} from '../../Catalog'
 
 export function Search() {
-    const { searchValue, setSearchValue } = React.useContext(SearchContext)
+    const { searchValue, setSearchValue } = React.useContext(FilterContext)
 
     return (
         <div className={styles.search}>

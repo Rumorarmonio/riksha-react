@@ -1,16 +1,19 @@
 import React from 'react'
 import styles from './SortType.module.scss'
 import {sortTypes} from '../../../../assets/data/arrays'
-import {SearchContext} from '../../Catalog'
+import {useDispatch, useSelector} from 'react-redux'
+import {setSort} from '../../../../redux/slices/filterSlice'
 
 function SortType() {
-    const [open, setOpen] = React.useState(false)
-    const { sortType, onChangeSort } = React.useContext(SearchContext)
+    const dispatch = useDispatch()
+    const sortType = useSelector(state => state.filter.sortType)
 
-    const onClickListItem = (i) => {
-        onChangeSort(i)
+    const onClickListItem = (type) => {
+        dispatch(setSort(type))
         setOpen(false)
     }
+
+    const [open, setOpen] = React.useState(false)
 
     return (
         <div className={styles.sortType}>

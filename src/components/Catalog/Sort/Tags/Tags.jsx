@@ -2,21 +2,24 @@ import React from 'react'
 
 import styles from './Tags.module.scss'
 import {attributes, ingredients} from '../../../../assets/data/arrays'
+import {FilterContext} from '../../Catalog'
 
 export default function Tags() {
+    const {categoryId, onChangeCategory} = React.useContext(FilterContext)
+
     const [ingredientState, setIngredientState] = React.useState(ingredients)
     const [attributeState, setAttributeState] = React.useState(attributes)
 
+    // TODO: save tags to redux
     function createElements(state, setState) {
         return state.map(({id, name, icon, selected}) =>
             (
                 <li className={`${styles.tag} ${selected && styles.active}`}
-                    onClick={() =>
-                        setState(
-                            state.map(item =>
-                                (item.id === id ? {id, name, icon, selected: !selected} : item)
-                            )
-                        )
+                    onClick={() => {
+                        onChangeCategory(id)
+                        setState(state.map(item => item.id === id ? {id, name, icon, selected: !selected} : item))
+                        console.log('tag ', categoryId)
+                    }
                     }
                     key={id}>
                     <img className={styles.icon} src={icon} alt={`${name}.svg`}/>
