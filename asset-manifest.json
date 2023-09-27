@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/riksha-react/static/css/main.6d0e0bde.css",
-    "main.js": "/riksha-react/static/js/main.f9f1487b.js",
+    "main.css": "/riksha-react/static/css/main.5f19cd88.css",
+    "main.js": "/riksha-react/static/js/main.d75ef487.js",
     "static/media/404.svg": "/riksha-react/static/media/404.2212aba9076b1b489cf80ab988dc7e9f.svg",
     "static/media/wavy-pattern-big.svg": "/riksha-react/static/media/wavy-pattern-big.cf7fd7c15b1fb3e5135185a350eb5a52.svg",
     "static/media/wavy-pattern.svg": "/riksha-react/static/media/wavy-pattern.08b698419fcfb2f33e54.svg",
@@ -43,6 +43,7 @@
     "static/media/TTInterfaces-ExtraBold.ttf": "/riksha-react/static/media/TTInterfaces-ExtraBold.f3516ef80dd976d176bb.ttf",
     "static/media/TTInterfaces-Bold.eot": "/riksha-react/static/media/TTInterfaces-Bold.df4c2255743c2bf2b33a.eot",
     "static/media/TTInterfaces-Bold.ttf": "/riksha-react/static/media/TTInterfaces-Bold.4fe27a30a05599381987.ttf",
+    "static/media/empty.svg": "/riksha-react/static/media/empty.116c5cb88ee9019a6e3e936aa8c741ac.svg",
     "static/media/TTInterfaces-ThinItalic.woff": "/riksha-react/static/media/TTInterfaces-ThinItalic.0b5d2117810a130fc1ec.woff",
     "static/media/TTInterfaces-ExtraLightItalic.woff": "/riksha-react/static/media/TTInterfaces-ExtraLightItalic.4351f0c4602df0091615.woff",
     "static/media/TTInterfaces-LightItalic.woff": "/riksha-react/static/media/TTInterfaces-LightItalic.9029e39579ce6ad22726.woff",
@@ -111,11 +112,11 @@
     "static/media/profile.svg": "/riksha-react/static/media/profile.533f6f63618509f7f48afd0c13e8b3e0.svg",
     "static/media/search.svg": "/riksha-react/static/media/search.4270a1347249c07c19bf4ec0fbcba4c4.svg",
     "static/media/close.svg": "/riksha-react/static/media/close.cbbfefc9a99f6a29312f7c80fac2915e.svg",
-    "main.6d0e0bde.css.map": "/riksha-react/static/css/main.6d0e0bde.css.map",
-    "main.f9f1487b.js.map": "/riksha-react/static/js/main.f9f1487b.js.map"
+    "main.5f19cd88.css.map": "/riksha-react/static/css/main.5f19cd88.css.map",
+    "main.d75ef487.js.map": "/riksha-react/static/js/main.d75ef487.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d0e0bde.css",
-    "static/js/main.f9f1487b.js"
+    "static/css/main.5f19cd88.css",
+    "static/js/main.d75ef487.js"
   ]
 }
