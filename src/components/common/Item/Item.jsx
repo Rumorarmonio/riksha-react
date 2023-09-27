@@ -97,6 +97,7 @@ export default function Item({item, id, today}) {
                         <span className={styles.old}>{item.oldPrice && item.oldPrice + '\u20BD'}&#160;</span>
                         <span className={styles.new}>{item.price} &#8381;</span>
                     </div>
+                    {/*TODO: fix adding multiple items*/}
                     <Button link="/details"
                             label={`Заказать ${addedCount > 0 ? `(${addedCount})` : ''}`}
                             style={{

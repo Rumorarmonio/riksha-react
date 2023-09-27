@@ -19,14 +19,32 @@
                 padding-bottom: 56px;
             }
 
+            .clear {
+                width: 270px;
+                display: block;
+                font-size: 30px;
+                color: variables.$text-grey;
+                font-weight: 600;
+                margin-bottom: 40px;
+                cursor: pointer;
+            }
+
             .list {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
+                margin-bottom: 20px;
 
                 li:first-child {
                     border-top: 1px solid variables.$border-grey;
                 }
+            }
+
+            .label {
+                display: block;
+                font-size: 30px;
+                font-weight: 500;
+                margin-bottom: 40px;
             }
         }
     }
