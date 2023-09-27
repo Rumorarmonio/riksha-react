@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/riksha-react/static/css/main.3ab391dd.css",
-    "main.js": "/riksha-react/static/js/main.1361ff62.js",
+    "main.css": "/riksha-react/static/css/main.6d0e0bde.css",
+    "main.js": "/riksha-react/static/js/main.f9f1487b.js",
     "static/media/404.svg": "/riksha-react/static/media/404.2212aba9076b1b489cf80ab988dc7e9f.svg",
     "static/media/wavy-pattern-big.svg": "/riksha-react/static/media/wavy-pattern-big.cf7fd7c15b1fb3e5135185a350eb5a52.svg",
     "static/media/wavy-pattern.svg": "/riksha-react/static/media/wavy-pattern.08b698419fcfb2f33e54.svg",
@@ -106,15 +106,16 @@
     "index.html": "/riksha-react/index.html",
     "static/media/facebook.svg": "/riksha-react/static/media/facebook.91d739ffe29ccd56c89fae7d506b7958.svg",
     "static/media/wok.svg": "/riksha-react/static/media/wok.d742cc51b54eaa889f7e1dd4c7ff5274.svg",
+    "static/media/trash-bin.svg": "/riksha-react/static/media/trash-bin.36bad83924258a612f7f2f0ea9cf9953.svg",
     "static/media/new.svg": "/riksha-react/static/media/new.8680e12d06c823eeddca93b0612d837d.svg",
     "static/media/profile.svg": "/riksha-react/static/media/profile.533f6f63618509f7f48afd0c13e8b3e0.svg",
     "static/media/search.svg": "/riksha-react/static/media/search.4270a1347249c07c19bf4ec0fbcba4c4.svg",
     "static/media/close.svg": "/riksha-react/static/media/close.cbbfefc9a99f6a29312f7c80fac2915e.svg",
-    "main.3ab391dd.css.map": "/riksha-react/static/css/main.3ab391dd.css.map",
-    "main.1361ff62.js.map": "/riksha-react/static/js/main.1361ff62.js.map"
+    "main.6d0e0bde.css.map": "/riksha-react/static/css/main.6d0e0bde.css.map",
+    "main.f9f1487b.js.map": "/riksha-react/static/js/main.f9f1487b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ab391dd.css",
-    "static/js/main.1361ff62.js"
+    "static/css/main.6d0e0bde.css",
+    "static/js/main.f9f1487b.js"
   ]
 }
