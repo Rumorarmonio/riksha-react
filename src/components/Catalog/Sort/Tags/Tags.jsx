@@ -18,7 +18,7 @@ export default function Tags() {
                     onClick={() => {
                         onChangeCategory(id)
                         setState(state.map(item => item.id === id ? {id, name, icon, selected: !selected} : item))
-                        console.log('tag ', categoryId)
+                        // console.log('tag ', categoryId)
                     }
                     }
                     key={id}>

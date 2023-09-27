@@ -1,0 +1,33 @@
+@use '../../assets/styles/variables';
+
+.cart {
+    margin: 80px 0 80px;
+
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: flex-start;
+        max-width: 1224px;
+        margin: 0 auto 50px auto;
+
+        .left {
+
+            .title {
+                font-size: 40px;
+                font-weight: 600;
+                padding-bottom: 56px;
+            }
+
+            .list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                li:first-child {
+                    border-top: 1px solid variables.$border-grey;
+                }
+            }
+        }
+    }
+}

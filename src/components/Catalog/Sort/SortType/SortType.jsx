@@ -8,15 +8,33 @@ function SortType() {
     const dispatch = useDispatch()
     const sortType = useSelector(state => state.filter.sortType)
 
+    const [open, setOpen] = React.useState(false)
+    const sortRef = React.useRef()
+
     const onClickListItem = (type) => {
         dispatch(setSort(type))
         setOpen(false)
     }
 
-    const [open, setOpen] = React.useState(false)
+    // TODO: fix clicking outside
+    // React.useEffect(() => {
+    //     const handleClickOutside = (event) => {
+    //         if (!event.path.includes(sortRef.current)) {
+    //             setOpen(false)
+    //         }
+    //     }
+    //
+    //     document.body.addEventListener('click', handleClickOutside)
+    //     console.log('addEventListener')
+    //
+    //     return () => {
+    //         document.body.removeEventListener('click', handleClickOutside)
+    //         console.log('removeEventListener')
+    //     }
+    // }, [])
 
     return (
-        <div className={styles.sortType}>
+        <div ref={sortRef} className={styles.sortType}>
             <span className={styles.supTitle}>Сортировка</span>
             <div className={styles.button}
                  onClick={() => setOpen(!open)}>

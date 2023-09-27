@@ -1,8 +1,20 @@
 import styles from './Item.module.scss'
 import Button from '../Button/Button'
+import {useDispatch, useSelector} from 'react-redux'
+import React from 'react'
+import {addItem} from '../../../redux/slices/cartSlice'
 
 export default function Item({item, id, today}) {
-    const values = ['spicy', 'baked', 'vegan']
+    const dispatch = useDispatch()
+    const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id))
+
+    const addedCount = cartItem ? cartItem.count : 0
+
+    const onClickAdd = (item) => {
+        dispatch(addItem({...item}))
+    }
+
+    const characteristics = ['spicy', 'baked', 'vegan']
     let leftColumn = null
     if (item.characteristics) {
         leftColumn =
@@ -10,7 +22,7 @@ export default function Item({item, id, today}) {
                 <ul className={styles.left}>
                     {
                         item.characteristics.map((name, index) => {
-                                if (values.includes(name)) {
+                                if (characteristics.includes(name)) {
                                     return (
                                         <li key={index}>
                                             <img className={styles.image}
@@ -30,6 +42,7 @@ export default function Item({item, id, today}) {
             )
     }
 
+    // TODO: optimize
     // three months
     const timeCheck = today - Date.parse(item.dateAdded) < 1000/*ms*/ * 60/*s*/ * 60/*min*/ * 24/*h*/ * 30/*days*/ * 3/*months*/
     const ordersCheck = item.orders >= 800
@@ -85,11 +98,12 @@ export default function Item({item, id, today}) {
                         <span className={styles.new}>{item.price} &#8381;</span>
                     </div>
                     <Button link="/details"
-                            label="Заказать"
+                            label={`Заказать ${addedCount > 0 ? `(${addedCount})` : ''}`}
                             style={{
                                 marginTop: '7px',
                                 padding: '13px 60px'
                             }}
+                            onClick={() => onClickAdd(item)}
                     />
                 </div>
             </div>

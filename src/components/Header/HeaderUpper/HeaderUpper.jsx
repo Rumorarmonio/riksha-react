@@ -6,8 +6,13 @@ import cart from '../../../assets/images/svg/header/cart.svg'
 import profile from '../../../assets/images/svg/header/profile.svg'
 import logo from '../../../assets/images/png/logo.png'
 import {navigation} from '../../../assets/data/arrays'
+import {useSelector} from 'react-redux'
 
 export default function HeaderUpper() {
+    const { items, totalPrice } = useSelector(state => state.cart);
+
+    const totalCount = items.reduce((sum, item) => sum + item.count, 0)
+
     const elements =
         navigation.map(({name, url}, index) => (
             <li className={styles.link} key={index}>
@@ -34,11 +39,11 @@ export default function HeaderUpper() {
                         <span className={styles.schedule}>c 10:00 до 23:00</span>
                     </div>
                     <div className={styles.cart}>
-                        <span className={styles.sum}>0 &#8381;</span>
+                        <span className={styles.sum}>{totalPrice} &#8381;</span>
                         <div className={styles.delimiter}></div>
                         <Link className={styles.icon} to="/cart">
                             <img src={cart} alt={'cart'}/>
-                            <span className={styles.counter}>0</span>
+                            <span className={styles.counter}>{totalCount}</span>
                         </Link>
                     </div>
                     <Link className={styles.profile} to="/NotFound">

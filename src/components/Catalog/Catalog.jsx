@@ -13,6 +13,7 @@ import {sortTypes} from '../../assets/data/arrays'
 export const FilterContext = React.createContext()
 
 export default function Catalog() {
+    console.log('catalog rendered')
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -23,7 +24,6 @@ export default function Catalog() {
 
     const onChangeCategory = (id) => {
         dispatch(setCategoryId(id))
-        console.log('onChangeCategory', categoryId)
     }
 
     const onChangePage = number => {
@@ -53,7 +53,22 @@ export default function Catalog() {
         )
     }
 
+    // TODO: fix multiple renderings
     React.useEffect(() => {
+        if (isMounted.current) {
+            const queryString = qs.stringify({
+                sortProperty: sortType.sortProperty,
+                categoryId,
+                currentPage,
+            })
+            navigate(`?${queryString}`)
+        }
+        isMounted.current = true
+    }, [categoryId, sortType.sortProperty, searchValue, currentPage])
+
+    // TODO: fix getting params from query string
+    React.useEffect(() => {
+        // console.log(qs.parse(window.location.search.substring(1)))
         if (window.location.search) {
             const params = qs.parse(window.location.search.substring(1))
 
@@ -68,18 +83,6 @@ export default function Catalog() {
             isSearch.current = true
         }
     }, [])
-
-    React.useEffect(() => {
-        if (isMounted.current) {
-            const queryString = qs.stringify({
-                sortProperty: sortType.sortProperty,
-                categoryId,
-                currentPage,
-            })
-            navigate(`?${queryString}`)
-        }
-        isMounted.current = true
-    }, [categoryId, sortType.sortProperty, searchValue, currentPage])
 
     React.useEffect(() => {
         // window.scrollTo(0, 0)
