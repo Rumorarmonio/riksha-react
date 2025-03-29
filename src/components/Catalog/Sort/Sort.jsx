@@ -4,14 +4,14 @@ import SortType from './SortType/SortType'
 import {Search} from './Search/Search'
 
 export default function Sort() {
-    return (
-        <div className={styles.sort}>
-            <div className={styles.wrapper}>
-                {/*TODO: sort by tags and categories*/}
-                <Tags/>
-                <SortType/>
-                <Search/>
-            </div>
-        </div>
-    )
+  return (
+    <div className={styles.sort}>
+      <div className={styles.wrapper}>
+        {/*TODO: sort by tags and categories*/}
+        <Tags/>
+        <SortType/>
+        <Search/>
+      </div>
+    </div>
+  )
 }

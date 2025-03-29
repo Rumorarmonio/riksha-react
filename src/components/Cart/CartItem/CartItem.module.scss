@@ -1,67 +1,67 @@
 @use '../../../assets/styles/variables';
 
 .cartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid variables.$border-grey;
+  padding: 25px 0;
+
+  .left {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 15px;
-    border-bottom: 1px solid variables.$border-grey;
-    padding: 25px 0;
+    width: 350px;
 
-    .left {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        width: 350px;
-
-        .image {
-            width: 98px;
-            height: 64px;
-            object-fit: cover;
-        }
-
-        .name {
-            font-size: 14px;
-            font-weight: 600;
-            color: variables.$black;
-        }
+    .image {
+      width: 98px;
+      height: 64px;
+      object-fit: cover;
     }
 
-    .right {
-        display: flex;
-        align-items: center;
-        gap: 35px;
-
-        .quantityContainer {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 10px;
-            border: 1px solid variables.$border-grey;
-            border-radius: 5px;
-
-            .quantity {
-                font-size: 16px;
-                color: variables.$black
-            }
-
-            .button {
-                font-size: 24px;
-                font-weight: 200;
-                color: variables.$accent;
-                cursor: pointer;
-                user-select: none;
-            }
-        }
-
-        .trashBin {
-            cursor: pointer;
-        }
-
-        .price {
-            font-size: 16px;
-            font-weight: 600;
-            color: variables.$black;
-        }
+    .name {
+      font-size: 14px;
+      font-weight: 600;
+      color: variables.$black;
     }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    .quantityContainer {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 10px;
+      border: 1px solid variables.$border-grey;
+      border-radius: 5px;
+
+      .quantity {
+        font-size: 16px;
+        color: variables.$black
+      }
+
+      .button {
+        font-size: 24px;
+        font-weight: 200;
+        color: variables.$accent;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+
+    .trashBin {
+      cursor: pointer;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: 600;
+      color: variables.$black;
+    }
+  }
 }

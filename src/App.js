@@ -10,18 +10,18 @@ import Details from './components/Details/Details'
 // TODO: change project structure (or not) :)
 // TODO: fix console warnings
 function App() {
-    return (
-        <div className="App">
-            <Header/>
-            <Routes>
-                <Route path="/" element={<Catalog/>}/>
-                <Route path="/cart" element={<Cart/>}/>
-                <Route path="/details" element={<Details/>}/>
-                <Route path="*" element={<NotFound/>}/>
-            </Routes>
-            <Footer/>
-        </div>
-    )
+  return (
+    <div className="App">
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Catalog/>}/>
+        <Route path="/cart" element={<Cart/>}/>
+        <Route path="/details" element={<Details/>}/>
+        <Route path="*" element={<NotFound/>}/>
+      </Routes>
+      <Footer/>
+    </div>
+  )
 }
 
 export default App

@@ -1,54 +1,54 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const initialState = {
-    totalPrice: 0,
-    items: []
+  totalPrice: 0,
+  items: [],
 }
 
 const cartSlice = createSlice({
-    name: 'cart',
-    initialState,
-    reducers: {
-        addItem(state, action) {
-            const findItem = state.items.find(obj => obj.id === action.payload)
+  name: 'cart',
+  initialState,
+  reducers: {
+    addItem(state, action) {
+      const findItem = state.items.find(obj => obj.id === action.payload)
 
-            if (findItem) {
-                findItem.count++
-            } else {
-                state.items.push({
-                    ...action.payload,
-                    count: 1,
-                })
-            }
+      if (findItem) {
+        findItem.count++
+      } else {
+        state.items.push({
+          ...action.payload,
+          count: 1,
+        })
+      }
 
-            state.totalPrice = state.items.reduce((sum, obj) => {
-                return (obj.price * obj.count) + sum
-            }, 0)
-        },
-        minusItem(state, action) {
-            const item = state.items.find(obj => obj.id === action.payload)
+      state.totalPrice = state.items.reduce((sum, obj) => {
+        return (obj.price * obj.count) + sum
+      }, 0)
+    },
+    minusItem(state, action) {
+      const item = state.items.find(obj => obj.id === action.payload)
 
-            if (item) {
-                item.count--
-            }
+      if (item) {
+        item.count--
+      }
 
-            state.totalPrice = state.items.reduce((sum, obj) => {
-                return (obj.price * obj.count) + sum
-            }, 0)
-        },
-        removeItem(state, action) {
-            state.items = state.items.filter(obj => obj.id !== action.payload)
+      state.totalPrice = state.items.reduce((sum, obj) => {
+        return (obj.price * obj.count) + sum
+      }, 0)
+    },
+    removeItem(state, action) {
+      state.items = state.items.filter(obj => obj.id !== action.payload)
 
-            state.totalPrice = state.items.reduce((sum, obj) => {
-                return (obj.price * obj.count) + sum
-            }, 0)
-        },
-        clearItems(state) {
-            state.items = []
-            state.totalPrice = 0
-        },
-    }
+      state.totalPrice = state.items.reduce((sum, obj) => {
+        return (obj.price * obj.count) + sum
+      }, 0)
+    },
+    clearItems(state) {
+      state.items = []
+      state.totalPrice = 0
+    },
+  },
 })
 
-export const {addItem, minusItem, removeItem, clearItems} = cartSlice.actions
+export const { addItem, minusItem, removeItem, clearItems } = cartSlice.actions
 export default cartSlice.reducer

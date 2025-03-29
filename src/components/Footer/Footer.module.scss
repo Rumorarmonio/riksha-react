@@ -1,119 +1,119 @@
 @use '../../assets/styles/variables';
 
 .footer {
-    background-color: variables.$black;
-    color: #fff;
-    padding: 35px 0 18px 0;
+  background-color: variables.$black;
+  color: #fff;
+  padding: 35px 0 18px 0;
 
-    .wrapper {
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1239px;
+    margin: auto;
+    gap: 51px;
+
+    .logo {
+      position: relative;
+      width: 112px;
+
+      img {
+        position: absolute;
+        bottom: 32px;
+
+        @media (max-width: variables.$bp-1275) {
+          bottom: 0;
+        }
+
+        @media (max-width: variables.$bp-538) {
+          bottom: -30px;
+        }
+      }
+    }
+
+    a, span {
+      color: #fff;
+    }
+
+    .left {
+      margin-right: 39px;
+
+      @media (max-width: variables.$bp-538) {
+        margin-right: 0;
+      }
+
+      .links {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 14px;
+      }
+
+      .socials {
+        display: flex;
+        gap: 20px;
+
+        @media (max-width: variables.$bp-538) {
+          justify-content: center;
+        }
+      }
+    }
+
+    .center {
+      width: 420px;
+      margin-right: 17px;
+
+      @media (max-width: variables.$bp-538) {
+        margin-right: 0;
+      }
+
+      .links {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        max-width: 1239px;
-        margin: auto;
-        gap: 51px;
+        gap: 20px;
+        justify-content: space-between;
 
-        .logo {
-            position: relative;
-            width: 112px;
-
-            img {
-                position: absolute;
-                bottom: 32px;
-
-                @media (max-width: variables.$bp-1275) {
-                    bottom: 0;
-                }
-
-                @media (max-width: variables.$bp-538) {
-                    bottom: -30px;
-                }
-            }
+        li {
+          margin-right: 20px;
         }
-
-        a, span {
-            color: #fff;
-        }
-
-        .left {
-            margin-right: 39px;
-
-            @media (max-width: variables.$bp-538) {
-                margin-right: 0;
-            }
-
-            .links {
-                display: flex;
-                gap: 40px;
-                margin-bottom: 14px;
-            }
-
-            .socials {
-                display: flex;
-                gap: 20px;
-
-                @media (max-width: variables.$bp-538) {
-                    justify-content: center;
-                }
-            }
-        }
-
-        .center {
-            width: 420px;
-            margin-right: 17px;
-
-            @media (max-width: variables.$bp-538) {
-                margin-right: 0;
-            }
-
-            .links {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: space-between;
-
-                li {
-                    margin-right: 20px;
-                }
-            }
-        }
-
-        .right {
-            display: flex;
-            align-items: flex-end;
-            flex-direction: column;
-
-            @media (max-width: variables.$bp-538) {
-                align-items: center;
-            }
-
-            .number {
-                font-size: 24px;
-                font-weight: 700;
-                margin-bottom: 15px;
-                padding-top: 4px;
-            }
-
-            .schedule {
-                padding-right: 7px;
-                font-size: 16px;
-                font-weight: 400;
-                margin-bottom: 20px;
-
-                @media (max-width: variables.$bp-538) {
-                    padding-right: 0;
-                }
-            }
-
-            .copyright {
-                font-size: 12px;
-                font-weight: 300;
-                padding-right: 7px;
-
-                @media (max-width: variables.$bp-538) {
-                    padding-right: 0;
-                }
-            }
-        }
+      }
     }
+
+    .right {
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+
+      @media (max-width: variables.$bp-538) {
+        align-items: center;
+      }
+
+      .number {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+        padding-top: 4px;
+      }
+
+      .schedule {
+        padding-right: 7px;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 20px;
+
+        @media (max-width: variables.$bp-538) {
+          padding-right: 0;
+        }
+      }
+
+      .copyright {
+        font-size: 12px;
+        font-weight: 300;
+        padding-right: 7px;
+
+        @media (max-width: variables.$bp-538) {
+          padding-right: 0;
+        }
+      }
+    }
+  }
 }

@@ -1,74 +1,74 @@
 @use '../../../../assets/styles/variables';
 
 .tags {
-    width: 100%;
-    max-width: 927px;
+  width: 100%;
+  max-width: 927px;
 
-    .label {
-        display: block;
+  .label {
+    display: block;
+    font-weight: 500;
+    color: variables.$text-grey;
+    margin-bottom: 7px;
+  }
+
+  @media (max-width: variables.$bp-1275) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .breadcrumbs {
+    display: block;
+    margin-bottom: 41px;
+
+    b {
+      font-weight: 600;
+    }
+  }
+
+  .title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 37px;
+  }
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+    user-select: none;
+
+    &:first-of-type {
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: flex;
+      align-items: center;
+      padding: 11px 19px;
+      border-radius: 7px;
+      border: 1px solid variables.$grey-darker;
+      cursor: pointer;
+
+      @media (max-width: variables.$bp-538) {
+        flex-grow: 1;
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+
+      .name {
         font-weight: 500;
-        color: variables.$text-grey;
-        margin-bottom: 7px;
+      }
     }
 
-    @media (max-width: variables.$bp-1275) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 15px;
+    .active {
+      border: 1px solid variables.$accent;
     }
-
-    .breadcrumbs {
-        display: block;
-        margin-bottom: 41px;
-
-        b {
-            font-weight: 600;
-        }
-    }
-
-    .title {
-        font-size: 40px;
-        font-weight: 600;
-        margin-bottom: 37px;
-    }
-
-    .list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-        margin-top: 5px;
-        user-select: none;
-
-        &:first-of-type {
-            margin-bottom: 10px;
-        }
-
-        .tag {
-            display: flex;
-            align-items: center;
-            padding: 11px 19px;
-            border-radius: 7px;
-            border: 1px solid variables.$grey-darker;
-            cursor: pointer;
-
-            @media (max-width: variables.$bp-538) {
-                flex-grow: 1;
-            }
-
-            .icon {
-                width: 24px;
-                height: 24px;
-                margin-right: 8px;
-            }
-
-            .name {
-                font-weight: 500;
-            }
-        }
-
-        .active {
-            border: 1px solid variables.$accent;
-        }
-    }
+  }
 }

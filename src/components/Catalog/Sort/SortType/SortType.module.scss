@@ -1,86 +1,86 @@
 @use '../../../../assets/styles/variables';
 
 .sortType {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  user-select: none;
+
+  @media (max-width: variables.$bp-1275) {
+    align-items: center;
+  }
+
+  .supTitle {
+    font-weight: 500;
+    color: variables.$text-grey;
+  }
+
+  .button {
     display: flex;
-    flex-direction: column;
-    gap: 7px;
-    position: relative;
-    user-select: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 295px;
+    padding: 15px 18px;
+    border: 1px solid variables.$border-grey;
+    border-radius: 10px;
+    cursor: pointer;
 
-    @media (max-width: variables.$bp-1275) {
-        align-items: center;
+    span {
+      font-weight: 500;
     }
 
-    .supTitle {
-        font-weight: 500;
-        color: variables.$text-grey;
-    }
+    .arrow {
+      border: solid variables.$black-icon;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 5px;
+      transition-duration: 0.3s;
+      transition-property: transform;
 
-    .button {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 295px;
-        padding: 15px 18px;
-        border: 1px solid variables.$border-grey;
-        border-radius: 10px;
+      &.up {
+        //transform: rotate3d(0, 0, 0.5, 225deg);
+        transform: rotate(-135deg);
+        //transform: rotateX(180deg);
+      }
+
+      &.down {
+        //transform: rotate3d(0, 0, 0.5, 45deg);
+        transform: rotate(45deg);
+        //transform: rotateX(0deg);
+      }
+    }
+  }
+
+  .popup {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    margin-top: 75px;
+    background: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 295px;
+
+    ul {
+      overflow: hidden;
+
+      li {
+        padding: 12px 20px;
         cursor: pointer;
 
-        span {
-            font-weight: 500;
+        &.active,
+        &:hover {
+          background: rgba(variables.$accent, 0.2);
         }
 
-        .arrow {
-            border: solid variables.$black-icon;
-            border-width: 0 2px 2px 0;
-            display: inline-block;
-            padding: 5px;
-            transition-duration: 0.3s;
-            transition-property: transform;
-
-            &.up {
-                //transform: rotate3d(0, 0, 0.5, 225deg);
-                transform: rotate(-135deg);
-                //transform: rotateX(180deg);
-            }
-
-            &.down {
-                //transform: rotate3d(0, 0, 0.5, 45deg);
-                transform: rotate(45deg);
-                //transform: rotateX(0deg);
-            }
+        &.active {
+          font-weight: bold;
+          color: variables.$accent;
         }
+      }
     }
-
-    .popup {
-        position: absolute;
-        z-index: 1;
-        right: 0;
-        margin-top: 75px;
-        background: #ffffff;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
-        border-radius: 10px;
-        overflow: hidden;
-        padding: 10px 0;
-        width: 295px;
-
-        ul {
-            overflow: hidden;
-
-            li {
-                padding: 12px 20px;
-                cursor: pointer;
-
-                &.active,
-                &:hover {
-                    background: rgba(variables.$accent, 0.2);
-                }
-
-                &.active {
-                    font-weight: bold;
-                    color: variables.$accent;
-                }
-            }
-        }
-    }
+  }
 }

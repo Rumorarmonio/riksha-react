@@ -1,38 +1,38 @@
 @use '../../../../assets/styles/variables';
 
 .pagination {
-    margin: auto;
-    text-align: center;
+  margin: auto;
+  text-align: center;
 
-    li {
-        display: inline-flex;
+  li {
+    display: inline-flex;
 
-        a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: variables.$accent;
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: variables.$accent;
 
-            width: 45px;
-            height: 45px;
-            border-radius: 30px;
-            border: 1px solid variables.$accent;
-            margin-right: 10px;
-            cursor: pointer;
+      width: 45px;
+      height: 45px;
+      border-radius: 30px;
+      border: 1px solid variables.$accent;
+      margin-right: 10px;
+      cursor: pointer;
 
-            &:hover {
-                background: rgba(variables.$accent, .8);
-                color: #fff;
-            }
-        }
+      &:hover {
+        background: rgba(variables.$accent, .8);
+        color: #fff;
+      }
     }
+  }
 
-    :global {
-        .selected {
-            a {
-                background-color: variables.$accent;
-                color: #fff;
-            }
-        }
+  :global {
+    .selected {
+      a {
+        background-color: variables.$accent;
+        color: #fff;
+      }
     }
+  }
 }

@@ -1,51 +1,51 @@
 @use '../../assets/styles/variables';
 
 .cart {
-    margin: 80px 0 80px;
+  margin: 80px 0 80px;
 
-    .wrapper {
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: flex-start;
+    max-width: 1224px;
+    margin: 0 auto 50px auto;
+
+    .left {
+
+      .title {
+        font-size: 40px;
+        font-weight: 600;
+        padding-bottom: 56px;
+      }
+
+      .clear {
+        width: 270px;
+        display: block;
+        font-size: 30px;
+        color: variables.$text-grey;
+        font-weight: 600;
+        margin-bottom: 40px;
+        cursor: pointer;
+      }
+
+      .list {
         display: flex;
-        flex-wrap: wrap;
-        gap: 24px;
-        justify-content: flex-start;
-        max-width: 1224px;
-        margin: 0 auto 50px auto;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
 
-        .left {
-
-            .title {
-                font-size: 40px;
-                font-weight: 600;
-                padding-bottom: 56px;
-            }
-
-            .clear {
-                width: 270px;
-                display: block;
-                font-size: 30px;
-                color: variables.$text-grey;
-                font-weight: 600;
-                margin-bottom: 40px;
-                cursor: pointer;
-            }
-
-            .list {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                margin-bottom: 20px;
-
-                li:first-child {
-                    border-top: 1px solid variables.$border-grey;
-                }
-            }
-
-            .label {
-                display: block;
-                font-size: 30px;
-                font-weight: 500;
-                margin-bottom: 40px;
-            }
+        li:first-child {
+          border-top: 1px solid variables.$border-grey;
         }
+      }
+
+      .label {
+        display: block;
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 40px;
+      }
     }
+  }
 }

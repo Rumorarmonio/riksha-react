@@ -1,20 +1,20 @@
 @use '../../../assets/styles/variables';
 
 .empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 1200px;
-    margin: 100px auto 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1200px;
+  margin: 100px auto 300px;
 
-    .image {
-        margin-bottom: 30px;
-    }
+  .image {
+    margin-bottom: 30px;
+  }
 
-    .title {
-        display: block;
-        font-size: 24px;
-        font-weight: 500;
-        margin-bottom: 40px;
-    }
+  .title {
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
 }

@@ -1,114 +1,114 @@
 @use '../../../assets/styles/variables';
 
 .item {
-    position: relative;
+  position: relative;
+  width: 392px;
+  background-color: #fff;
+  padding-bottom: 15px;
+
+  @media (max-width: variables.$bp-1275) {
+    margin: 0 20px;
+  }
+
+  @media (max-width: variables.$bp-538) {
+    margin: 0;
+  }
+
+  .image {
     width: 392px;
-    background-color: #fff;
-    padding-bottom: 15px;
+    height: 256px;
+    margin-bottom: 30px;
+    object-fit: cover;
+  }
 
-    @media (max-width: variables.$bp-1275) {
-        margin: 0 20px;
-    }
-
-    @media (max-width: variables.$bp-538) {
-        margin: 0;
-    }
+  .left {
+    position: absolute;
+    top: 12px;
+    left: 18px;
 
     .image {
-        width: 392px;
-        height: 256px;
+      width: 32px;
+      height: 32px;
+      margin-bottom: 1px;
+    }
+
+    .label {
+      color: #fff;
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      text-align: center;
+      -webkit-text-stroke: 1px rgba(variables.$accent, .3);
+    }
+  }
+
+  .right {
+    position: absolute;
+    top: 16px;
+    right: -16px;
+
+    .image {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .container {
+    padding: 0 25px;
+
+    .upper {
+      height: 170px;
+
+      .details {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 11px;
+
+        .detail {
+          color: variables.$text-grey;
+        }
+
+        .dot {
+          font-size: 25px;
+          color: variables.$accent;
+          line-height: 13px;
+        }
+      }
+
+      .name {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        line-height: 25px;
+      }
+
+      .ingredients {
+        display: block;
         margin-bottom: 30px;
-        object-fit: cover;
+      }
     }
 
-    .left {
-        position: absolute;
-        top: 12px;
-        left: 18px;
+    .bottom {
+      display: flex;
+      justify-content: space-between;
 
-        .image {
-            width: 32px;
-            height: 32px;
-            margin-bottom: 1px;
+      .price {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        .old {
+          color: variables.$text-grey;
+          text-decoration: line-through;
         }
 
-        .label {
-            color: #fff;
-            display: block;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            text-align: center;
-            -webkit-text-stroke: 1px rgba(variables.$accent, .3);
+        .new {
+          font-size: 32px;
+          font-weight: 700;
         }
+      }
     }
-
-    .right {
-        position: absolute;
-        top: 16px;
-        right: -16px;
-
-        .image {
-            width: 72px;
-            height: 72px;
-            margin-bottom: 10px;
-        }
-    }
-
-    .container {
-        padding: 0 25px;
-
-        .upper {
-            height: 170px;
-
-            .details {
-                display: flex;
-                gap: 5px;
-                margin-bottom: 11px;
-
-                .detail {
-                    color: variables.$text-grey;
-                }
-
-                .dot {
-                    font-size: 25px;
-                    color: variables.$accent;
-                    line-height: 13px;
-                }
-            }
-
-            .name {
-                font-size: 24px;
-                font-weight: 600;
-                margin-bottom: 15px;
-                line-height: 25px;
-            }
-
-            .ingredients {
-                display: block;
-                margin-bottom: 30px;
-            }
-        }
-
-        .bottom {
-            display: flex;
-            justify-content: space-between;
-
-            .price {
-                display: flex;
-                flex-direction: column;
-                gap: 6px;
-
-                .old {
-                    color: variables.$text-grey;
-                    text-decoration: line-through;
-                }
-
-                .new {
-                    font-size: 32px;
-                    font-weight: 700;
-                }
-            }
-        }
-    }
+  }
 }
