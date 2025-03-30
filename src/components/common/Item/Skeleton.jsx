@@ -8,7 +8,7 @@ export default function Skeleton(props) {
       width={392}
       height={501}
       viewBox="0 0 392 501"
-      backgroundColor="#ccc"
+      backgroundColor="#E8E8E8"
       foregroundColor="#ecebeb"
       {...props}
     >

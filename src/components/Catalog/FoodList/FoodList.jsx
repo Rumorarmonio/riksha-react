@@ -19,7 +19,7 @@ export default function FoodList({ items, status, currentPage, onChangePage }) {
       items.map(item =>
         <Item
           key={item.id}
-          item={item}
+          product={item}
           id={item.id}
           today={today}
         />,
@@ -40,7 +40,10 @@ export default function FoodList({ items, status, currentPage, onChangePage }) {
           </ul>
         )
       }
-      <Pagination currentPage={currentPage} onChangePage={onChangePage}/>
+      <Pagination
+        currentPage={currentPage}
+        onChangePage={onChangePage}
+      />
     </div>
   )
 }

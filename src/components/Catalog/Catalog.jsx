@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import qs from 'qs'
 import {useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
@@ -6,33 +6,31 @@ import {useDispatch, useSelector} from 'react-redux'
 import InfoBlock from './InfoBlock/InfoBlock'
 import Sort from './Sort/Sort'
 import FoodList from './FoodList/FoodList'
-import {setCategoryId, setCurrentPage, setFilters} from '../../redux/slices/filterSlice'
+import {selectFilter, selectSearchValue, setCategoryId, setCurrentPage, setFilters} from '../../redux/slices/filterSlice'
 import {sortTypes} from '../../assets/data/arrays'
-import {fetchProducts} from '../../redux/slices/productsSlice'
-
-export const FilterContext = React.createContext()
+import {fetchProducts, selectProducts} from '../../redux/slices/productsSlice'
 
 export default function Catalog() {
   console.log('catalog rendered')
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const isSearch = React.useRef(false)
-  const isMounted = React.useRef(false)
+  const isSearch = useRef(false)
+  const isMounted = useRef(false)
 
-  const { categoryId, sortType, currentPage } = useSelector(state => state.filter)
-  const { products, status } = useSelector(state => state.products)
+  const { categoryId, sortType, currentPage } = useSelector(selectFilter)
+  const { products, status } = useSelector(selectProducts)
 
-  const onChangeCategory = (id) => {
+  function onChangeCategory(id) {
     dispatch(setCategoryId(id))
   }
 
-  const onChangePage = number => {
+  // TODO: count pages in code and remove hardcoded number
+  function onChangePage(number) {
     dispatch(setCurrentPage(number))
   }
 
-  // TODO: count pages in code and remove hardcoded number
-  const [searchValue, setSearchValue] = React.useState('')
+  const searchValue = useSelector(selectSearchValue)
 
   async function getProducts() {
     const sortBy = sortType.sortProperty.replace('-', '')
@@ -63,13 +61,12 @@ export default function Catalog() {
     }
     isMounted.current = true
 
-    // window.scrollTo(0, 0)
-
     if (!isSearch.current) {
       getProducts()
     }
 
     // isSearch.current = false
+    // window.scrollTo(0, 0)
   }, [categoryId, sortType.sortProperty, searchValue, currentPage])
 
   // TODO: fix getting params from query string
@@ -94,21 +91,13 @@ export default function Catalog() {
 
   return (
     <>
-      <FilterContext.Provider
-        value={{
-          categoryId,
-          onChangeCategory,
-          setSearchValue,
-        }}
-      >
-        <Sort/>
-        <FoodList
-          items={products}
-          status={status}
-          currentPage={currentPage}
-          onChangePage={onChangePage}
-        />
-      </FilterContext.Provider>
+      <Sort/>
+      <FoodList
+        items={products}
+        status={status}
+        currentPage={currentPage}
+        onChangePage={onChangePage}
+      />
       <InfoBlock/>
     </>
   )

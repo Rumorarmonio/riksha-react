@@ -2,6 +2,7 @@ import {createSlice} from '@reduxjs/toolkit'
 
 // TODO: store search value in redux
 const initialState = {
+  searchValue: '',
   categoryId: 0,
   currentPage: 1,
   sortType: {
@@ -15,8 +16,10 @@ const filterSlice = createSlice({
   initialState,
   reducers: {
     setCategoryId(state, action) {
-      // console.log('action setCategoryId', action)
       state.categiryId = action.payload
+    },
+    setSearchValue(state, action) {
+      state.searchValue = action.payload
     },
     setSort(state, action) {
       state.sortType = action.payload
@@ -32,5 +35,9 @@ const filterSlice = createSlice({
   },
 })
 
-export const { setCategoryId, setSort, setCurrentPage, setFilters } = filterSlice.actions
+export const selectFilter = state => state.filter
+export const selectSortType = state => state.filter.sortType
+export const selectSearchValue = state => state.filter.searchValue
+
+export const { setCategoryId, setSort, setCurrentPage, setFilters, setSearchValue } = filterSlice.actions
 export default filterSlice.reducer

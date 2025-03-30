@@ -1,7 +1,7 @@
 import styles from './Sort.module.scss'
 import Tags from './Tags/Tags'
 import SortType from './SortType/SortType'
-import {Search} from './Search/Search'
+import Search from './Search/Search'
 
 export default function Sort() {
   return (

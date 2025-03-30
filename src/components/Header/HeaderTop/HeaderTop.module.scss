@@ -1,0 +1,190 @@
+@use '../../../assets/styles/variables.scss';
+
+.upper {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1222px;
+    width: 100%;
+    margin: auto;
+    padding: 21px 0;
+
+    @media (max-width: variables.$bp-814) {
+      flex-direction: column;
+    }
+
+    .logo {
+      position: absolute;
+      top: 8px;
+      width: 134px;
+      height: 156px;
+
+      @media (max-width: variables.$bp-1178) {
+        top: 60px;
+      }
+
+      @media (max-width: variables.$bp-814) {
+        top: 8px;
+      }
+    }
+
+    .empty {
+      width: 134px;
+      margin-right: 61px;
+
+      @media (max-width: variables.$bp-814) {
+        margin-right: 0;
+        height: 156px;
+      }
+    }
+
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+
+      @media (max-width: variables.$bp-538) {
+        flex-direction: column;
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 49px;
+        margin-right: 86px;
+
+        @media (max-width: variables.$bp-1178) {
+          gap: 0;
+        }
+
+        @media (max-width: variables.$bp-814) {
+          margin-right: 0;
+        }
+
+        @media (max-width: variables.$bp-538) {
+          flex-direction: column;
+        }
+
+        .link {
+          display: flex;
+
+          @media (max-width: variables.$bp-1178) {
+            margin-right: 49px;
+            margin-bottom: 20px;
+          }
+
+          @media (max-width: variables.$bp-814) {
+            &:last-of-type {
+              margin-right: 0;
+            }
+          }
+
+          @media (max-width: variables.$bp-538) {
+            margin-right: 0;
+          }
+
+          a {
+            margin: auto;
+          }
+        }
+      }
+
+      .contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin-right: 56px;
+
+        @media (max-width: variables.$bp-538) {
+          margin-bottom: 15px;
+          margin-right: 0;
+          align-items: center;
+        }
+
+        .phone {
+          .icon {
+            margin-right: 7px;
+          }
+
+          .number {
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+
+        .schedule {
+          font-size: 12px;
+          font-weight: 500;
+          color: variables.$text-grey;
+        }
+      }
+
+      .cart {
+        width: 134px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: variables.$grey;
+        border-radius: 6px;
+        margin-right: 25px;
+
+        @media (max-width: variables.$bp-538) {
+          margin-bottom: 15px;
+          margin-right: 0;
+        }
+
+        .sum {
+          padding: 0 10px;
+          width: 78px;
+          text-align: center;
+        }
+
+        .delimiter {
+          height: 24px;
+          border-right: 1px solid #fff;
+        }
+
+        .icon {
+          margin: auto;
+          position: relative;
+
+          .counter {
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            bottom: 11px;
+            left: 12px;
+            color: #fff;
+            background-color: variables.$accent;
+            font-size: 11px;
+            text-align: center;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .profile {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        background-color: variables.$grey;
+        border-radius: 6px;
+        margin-left: auto;
+
+        .icon {
+          margin: auto;
+        }
+      }
+    }
+  }
+}

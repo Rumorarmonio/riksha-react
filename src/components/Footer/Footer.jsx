@@ -33,8 +33,14 @@ export default function Footer() {
   return (
     <div className={styles.footer}>
       <div className={styles.wrapper}>
-        <Link className={styles.logo} to="/">
-          <img src={logo} alt="logo.svg"/>
+        <Link
+          className={styles.logo}
+          to="/"
+        >
+          <img
+            src={logo}
+            alt="logo.svg"
+          />
         </Link>
         <div className={styles.left}>
           <ul className={styles.links}>
@@ -50,9 +56,15 @@ export default function Footer() {
           </ul>
         </div>
         <div className={styles.right}>
-          <a className={styles.number} href="tel:74956171424">+7 (495) 617-14-24</a>
-          <span className={styles.schedule}>c 10:00 до 23:00</span>
-          <span className={styles.copyright}>© Рикша. Все права защищены.</span>
+          <a className={styles.number} href="tel:74956171424">
+            +7 (495) 617-14-24
+          </a>
+          <span className={styles.schedule}>
+            c 10:00 до 23:00
+          </span>
+          <span className={styles.copyright}>
+            © Рикша. Все права защищены.
+          </span>
         </div>
       </div>
     </div>

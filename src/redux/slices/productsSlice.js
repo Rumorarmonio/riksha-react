@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import axios from 'axios'
 
-export const fetchProducts = createAsyncThunk('products/fetchProductsStatus', async (params) => {
+export const fetchProducts = createAsyncThunk('products/fetchProductsStatus', async (params, thunkAPI) => {
   const {
     sortBy,
     order,
@@ -46,6 +46,8 @@ const productSlice = createSlice({
     },
   },
 })
+
+export const selectProducts = state => state.products
 
 export const { setProducts } = productSlice.actions
 export default productSlice.reducer

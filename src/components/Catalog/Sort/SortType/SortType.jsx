@@ -2,16 +2,16 @@ import React from 'react'
 import styles from './SortType.module.scss'
 import {sortTypes} from '../../../../assets/data/arrays'
 import {useDispatch, useSelector} from 'react-redux'
-import {setSort} from '../../../../redux/slices/filterSlice'
+import {selectSortType, setSort} from '../../../../redux/slices/filterSlice'
 
-function SortType() {
+export default function SortType() {
   const dispatch = useDispatch()
-  const sortType = useSelector(state => state.filter.sortType)
+  const sortType = useSelector(selectSortType)
 
   const [open, setOpen] = React.useState(false)
   const sortRef = React.useRef()
 
-  const onClickListItem = (type) => {
+  function onClickListItem(type) {
     dispatch(setSort(type))
     setOpen(false)
   }
@@ -47,9 +47,11 @@ function SortType() {
             <ul>
               {
                 sortTypes.map((type, index) => (
-                  <li className={sortType.sortProperty === index ? 'active' : ''}
-                      onClick={() => onClickListItem(type)}
-                      key={index}>
+                  <li
+                    className={sortType.sortProperty === index ? 'active' : ''}
+                    onClick={() => onClickListItem(type)}
+                    key={index}
+                  >
                     {type.name}
                   </li>
                 ))
@@ -61,5 +63,3 @@ function SortType() {
     </div>
   )
 }
-
-export default SortType

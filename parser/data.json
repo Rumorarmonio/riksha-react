@@ -1,6 +1,6 @@
 [
   {
-    "id": 0,
+    "id": "0",
     "name": "Суши-пицца с курицей",
     "categories": [
       "rolls",
@@ -28,7 +28,7 @@
     "characteristics": []
   },
   {
-    "id": 1,
+    "id": "1",
     "name": "Суши-пицца с лососем",
     "categories": [
       "rolls",
@@ -56,7 +56,7 @@
     "characteristics": []
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Блум ролл",
     "categories": [
       "rolls",
@@ -84,7 +84,7 @@
     "characteristics": []
   },
   {
-    "id": 3,
+    "id": "3",
     "name": "Чебурашка",
     "categories": [
       "rolls",
@@ -115,7 +115,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Дзен ролл",
     "categories": [
       "rolls",
@@ -144,7 +144,7 @@
     ]
   },
   {
-    "id": 5,
+    "id": "5",
     "name": "Унаги сан",
     "categories": [
       "rolls",
@@ -175,7 +175,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": "6",
     "name": "Краш ролл",
     "categories": [
       "rolls",
@@ -204,7 +204,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": "7",
     "name": "Филадельфия унаги",
     "categories": [
       "rolls",
@@ -231,7 +231,7 @@
     "characteristics": []
   },
   {
-    "id": 8,
+    "id": "8",
     "name": "Филадельфия классика",
     "categories": [
       "rolls",
@@ -257,7 +257,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": "9",
     "name": "Лосось Кинг",
     "categories": [
       "rolls",
@@ -282,7 +282,7 @@
     "characteristics": []
   },
   {
-    "id": 10,
+    "id": "10",
     "name": "Филадельфия лайт сяке",
     "categories": [
       "rolls",
@@ -307,7 +307,7 @@
     "characteristics": []
   },
   {
-    "id": 11,
+    "id": "11",
     "name": "Цезарь ролл запеченный",
     "categories": [
       "rolls",
@@ -339,7 +339,7 @@
     ]
   },
   {
-    "id": 12,
+    "id": "12",
     "name": "Сяке лайт",
     "categories": [
       "rolls",
@@ -370,7 +370,7 @@
     ]
   },
   {
-    "id": 13,
+    "id": "13",
     "name": "Эби лайт темпура",
     "categories": [
       "rolls",
@@ -401,7 +401,7 @@
     ]
   },
   {
-    "id": 14,
+    "id": "14",
     "name": "Калифорния каппа маки в кунжуте",
     "categories": [
       "rolls",
@@ -426,7 +426,7 @@
     "characteristics": []
   },
   {
-    "id": 15,
+    "id": "15",
     "name": "Калифорния каппа маки с икрой",
     "categories": [
       "rolls",
@@ -451,7 +451,7 @@
     "characteristics": []
   },
   {
-    "id": 16,
+    "id": "16",
     "name": "Радуга",
     "categories": [
       "rolls",
@@ -480,7 +480,7 @@
     "characteristics": []
   },
   {
-    "id": 17,
+    "id": "17",
     "name": "Филадельфия сяке",
     "categories": [
       "rolls",
@@ -507,7 +507,7 @@
     ]
   },
   {
-    "id": 18,
+    "id": "18",
     "name": "Карамельная филадельфия",
     "categories": [
       "rolls",
@@ -535,7 +535,7 @@
     ]
   },
   {
-    "id": 19,
+    "id": "19",
     "name": "Лава с креветкой",
     "categories": [
       "rolls",
@@ -562,7 +562,7 @@
     "characteristics": []
   },
   {
-    "id": 20,
+    "id": "20",
     "name": "Лава с лососем",
     "categories": [
       "rolls",
@@ -589,7 +589,7 @@
     "characteristics": []
   },
   {
-    "id": 21,
+    "id": "21",
     "name": "Лава с крабом",
     "categories": [
       "rolls",
@@ -616,7 +616,7 @@
     "characteristics": []
   },
   {
-    "id": 22,
+    "id": "22",
     "name": "Лосось фри темпура",
     "categories": [
       "rolls",
@@ -647,7 +647,7 @@
     ]
   },
   {
-    "id": 23,
+    "id": "23",
     "name": "Челентано",
     "categories": [
       "rolls",
@@ -678,7 +678,7 @@
     ]
   },
   {
-    "id": 24,
+    "id": "24",
     "name": "Чикен спайси запеченный",
     "categories": [
       "rolls",
@@ -712,7 +712,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": "25",
     "name": "Нежный с курицей запеченный",
     "categories": [
       "rolls",
@@ -742,7 +742,7 @@
     ]
   },
   {
-    "id": 26,
+    "id": "26",
     "name": "Нежный с лососем запеченный",
     "categories": [
       "rolls",
@@ -773,7 +773,7 @@
     ]
   },
   {
-    "id": 27,
+    "id": "27",
     "name": "Дон Бекон",
     "categories": [
       "rolls",
@@ -800,7 +800,7 @@
     "characteristics": []
   },
   {
-    "id": 28,
+    "id": "28",
     "name": "Гранд Азия с тунцом",
     "categories": [
       "rolls",
@@ -831,7 +831,7 @@
     ]
   },
   {
-    "id": 29,
+    "id": "29",
     "name": "Гранд Азия с лососем",
     "categories": [
       "rolls",
@@ -862,7 +862,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": "30",
     "name": "Дуэт де люкс",
     "categories": [
       "rolls",
@@ -890,7 +890,7 @@
     "characteristics": []
   },
   {
-    "id": 31,
+    "id": "31",
     "name": "Запеченный Ролл с острым лососем",
     "categories": [
       "rolls",
@@ -924,7 +924,7 @@
     ]
   },
   {
-    "id": 32,
+    "id": "32",
     "name": "Оливье",
     "categories": [
       "rolls",
@@ -956,7 +956,7 @@
     ]
   },
   {
-    "id": 33,
+    "id": "33",
     "name": "Куритос",
     "categories": [
       "rolls",
@@ -983,7 +983,7 @@
     "characteristics": []
   },
   {
-    "id": 34,
+    "id": "34",
     "name": "Креветка барбекю запеченный",
     "categories": [
       "rolls",
@@ -1013,7 +1013,7 @@
     ]
   },
   {
-    "id": 35,
+    "id": "35",
     "name": "Крабстер",
     "categories": [
       "rolls",
@@ -1045,7 +1045,7 @@
     ]
   },
   {
-    "id": 36,
+    "id": "36",
     "name": "Калифорния сяке с икрой",
     "categories": [
       "rolls",
@@ -1073,7 +1073,7 @@
     ]
   },
   {
-    "id": 37,
+    "id": "37",
     "name": "Калифорния темпура",
     "categories": [
       "rolls",
@@ -1105,7 +1105,7 @@
     ]
   },
   {
-    "id": 38,
+    "id": "38",
     "name": "Монако запеченный",
     "categories": [
       "rolls",
@@ -1137,7 +1137,7 @@
     ]
   },
   {
-    "id": 39,
+    "id": "39",
     "name": "Филадельфия темпура",
     "categories": [
       "rolls",
@@ -1167,7 +1167,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": "40",
     "name": "Мидори хот",
     "categories": [
       "rolls",
@@ -1198,7 +1198,7 @@
     ]
   },
   {
-    "id": 41,
+    "id": "41",
     "name": "Токио запеченный",
     "categories": [
       "rolls",
@@ -1229,7 +1229,7 @@
     ]
   },
   {
-    "id": 42,
+    "id": "42",
     "name": "Мистер Крабс запеченный",
     "categories": [
       "rolls",
@@ -1259,7 +1259,7 @@
     ]
   },
   {
-    "id": 43,
+    "id": "43",
     "name": "Краб фри темпура",
     "categories": [
       "rolls",
@@ -1291,7 +1291,7 @@
     ]
   },
   {
-    "id": 44,
+    "id": "44",
     "name": "Сакура темпура",
     "categories": [
       "rolls",
@@ -1325,7 +1325,7 @@
     ]
   },
   {
-    "id": 45,
+    "id": "45",
     "name": "Айролл",
     "categories": [
       "rolls",
@@ -1356,7 +1356,7 @@
     ]
   },
   {
-    "id": 46,
+    "id": "46",
     "name": "Лосось темпура",
     "categories": [
       "rolls",
@@ -1385,7 +1385,7 @@
     ]
   },
   {
-    "id": 47,
+    "id": "47",
     "name": "Бонито",
     "categories": [
       "rolls",
@@ -1411,7 +1411,7 @@
     "characteristics": []
   },
   {
-    "id": 48,
+    "id": "48",
     "name": "Креветка с тунцом",
     "categories": [
       "rolls",
@@ -1442,7 +1442,7 @@
     ]
   },
   {
-    "id": 49,
+    "id": "49",
     "name": "Дракон",
     "categories": [
       "rolls",
@@ -1470,7 +1470,7 @@
     "characteristics": []
   },
   {
-    "id": 50,
+    "id": "50",
     "name": "Каппа маки",
     "categories": [
       "rolls",
@@ -1496,7 +1496,7 @@
     ]
   },
   {
-    "id": 51,
+    "id": "51",
     "name": "Маки сяке",
     "categories": [
       "rolls",
@@ -1519,7 +1519,7 @@
     "characteristics": []
   },
   {
-    "id": 52,
+    "id": "52",
     "name": "Маки эби",
     "categories": [
       "rolls",
@@ -1542,7 +1542,7 @@
     "characteristics": []
   },
   {
-    "id": 53,
+    "id": "53",
     "name": "Маки унаги",
     "categories": [
       "rolls",
@@ -1566,7 +1566,7 @@
     "characteristics": []
   },
   {
-    "id": 54,
+    "id": "54",
     "name": "Маки с тунцом",
     "categories": [
       "rolls",
@@ -1589,7 +1589,7 @@
     "characteristics": []
   },
   {
-    "id": 55,
+    "id": "55",
     "name": "Сашими ролл с тунцом и лососем",
     "categories": [
       "rolls",
@@ -1617,7 +1617,7 @@
     ]
   },
   {
-    "id": 56,
+    "id": "56",
     "name": "Сашими ролл с лососем и креветкой",
     "categories": [
       "rolls",
@@ -1645,7 +1645,7 @@
     ]
   },
   {
-    "id": 57,
+    "id": "57",
     "name": "Суши сяке",
     "categories": [
       "sushi"
@@ -1666,7 +1666,7 @@
     "characteristics": []
   },
   {
-    "id": 58,
+    "id": "58",
     "name": "Опаленные суши с лососем",
     "categories": [
       "sushi"
@@ -1692,7 +1692,7 @@
     ]
   },
   {
-    "id": 59,
+    "id": "59",
     "name": "Опаленные суши с тунцом",
     "categories": [
       "sushi"
@@ -1718,7 +1718,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": "60",
     "name": "Суши унаги",
     "categories": [
       "sushi"
@@ -1740,7 +1740,7 @@
     "characteristics": []
   },
   {
-    "id": 61,
+    "id": "61",
     "name": "Суши Чука",
     "categories": [
       "sushi"
@@ -1766,7 +1766,7 @@
     ]
   },
   {
-    "id": 62,
+    "id": "62",
     "name": "Гункан Сяке",
     "categories": [
       "sushi"
@@ -1791,7 +1791,7 @@
     ]
   },
   {
-    "id": 63,
+    "id": "63",
     "name": "Гункан Тунец",
     "categories": [
       "sushi"
@@ -1816,7 +1816,7 @@
     ]
   },
   {
-    "id": 64,
+    "id": "64",
     "name": "Гункан Эби",
     "categories": [
       "sushi"
@@ -1841,7 +1841,7 @@
     ]
   },
   {
-    "id": 65,
+    "id": "65",
     "name": "Гункан Сырный",
     "categories": [
       "sushi"
@@ -1864,7 +1864,7 @@
     "characteristics": []
   },
   {
-    "id": 66,
+    "id": "66",
     "name": "Гункан Сяке ХОТ запеченный",
     "categories": [
       "sushi"
@@ -1889,7 +1889,7 @@
     "characteristics": []
   },
   {
-    "id": 67,
+    "id": "67",
     "name": "Гункан Тунец ХОТ запеченный",
     "categories": [
       "sushi"
@@ -1914,7 +1914,7 @@
     "characteristics": []
   },
   {
-    "id": 68,
+    "id": "68",
     "name": "Гункан Эби ХОТ запеченный",
     "categories": [
       "sushi"
