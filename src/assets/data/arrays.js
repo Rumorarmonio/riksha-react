@@ -19,7 +19,7 @@ export const navigation = [
     name: 'Вакансии',
     url: '/NotFound',
   },
-]
+];
 
 export const categories = [
   {
@@ -72,7 +72,7 @@ export const categories = [
     icon: require('../images/svg/categories/promotions.svg').default,
     url: '/',
   },
-]
+];
 
 export const socials = [
   {
@@ -90,7 +90,7 @@ export const socials = [
     icon: require('../images/svg/socials/vk.svg').default,
     url: 'https://vk.com/',
   },
-]
+];
 
 export const sortTypes = [
   {
@@ -129,13 +129,13 @@ export const sortTypes = [
     name: 'По алфавиту (ASC)',
     sortProperty: '-name',
   },
-]
+];
 
 export const chars = {
   SPICY: 'spicy',
   BAKED: 'baked',
   VEGAN: 'vegan',
-}
+};
 
 export const categoryEnum = {
   PIZZA: 'pizza',
@@ -148,7 +148,7 @@ export const categoryEnum = {
   DESSERTS: 'desserts',
   BEVERAGES: 'beverages',
   DISCOUNTS: 'discounts',
-}
+};
 
 export const ingredients = [
   {
@@ -187,7 +187,7 @@ export const ingredients = [
     icon: require('../images/png/ingredients/mussels.png'),
     selected: false,
   },
-]
+];
 
 export const attributes = [
   {
@@ -226,4 +226,4 @@ export const attributes = [
     icon: require('../images/svg/attributes/discount.svg').default,
     selected: false,
   },
-]
+];

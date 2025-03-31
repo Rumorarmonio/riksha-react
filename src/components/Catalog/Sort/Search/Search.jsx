@@ -1,34 +1,34 @@
-import React from 'react'
+import React from 'react';
 
-import styles from './Search.module.scss'
-import search from '../../../../assets/images/svg/search/search.svg'
-import close from '../../../../assets/images/svg/search/close.svg'
-import debounce from 'lodash.debounce'
-import {useDispatch} from 'react-redux'
-import {setSearchValue} from '../../../../redux/slices/filterSlice'
+import styles from './Search.module.scss';
+import search from '../../../../assets/images/svg/search/search.svg';
+import close from '../../../../assets/images/svg/search/close.svg';
+import debounce from 'lodash.debounce';
+import {useDispatch} from 'react-redux';
+import {setSearchValue} from '../../../../redux/slices/filterSlice';
 
-export default function Search() {
-  const [value, setValue] = React.useState('')
-  const inputRef = React.useRef()
-  const dispatch = useDispatch()
+export function Search() {
+  const [value, setValue] = React.useState('');
+  const inputRef = React.useRef();
+  const dispatch = useDispatch();
 
   function onClickClear() {
-    dispatch(setSearchValue(''))
-    setValue('')
-    inputRef.current.focus()
+    dispatch(setSearchValue(''));
+    setValue('');
+    inputRef.current.focus();
   }
 
   function onChangeInput(event) {
-    setValue(event.target.value)
-    updateSearchValue(event.target.value)
+    setValue(event.target.value);
+    updateSearchValue(event.target.value);
   }
 
   const updateSearchValue = React.useCallback(
     debounce(string => {
-      dispatch(setSearchValue(string))
+      dispatch(setSearchValue(string));
     }, 1000),
     [],
-  )
+  );
 
   return (
     <div className={styles.search}>
@@ -55,5 +55,5 @@ export default function Search() {
         )
       }
     </div>
-  )
+  );
 }

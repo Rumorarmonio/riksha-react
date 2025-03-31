@@ -1,8 +1,8 @@
-import styles from './NotFound.module.scss'
-import notFound from '../../assets/images/svg/404.svg'
-import Button from '../common/Button/Button'
+import styles from './NotFound.module.scss';
+import notFound from '../../assets/images/svg/404.svg';
+import {Button} from '../common/Button/Button';
 
-export default function NotFound() {
+export function NotFound() {
   return (
     <section className={styles.notFound}>
       <img
@@ -22,5 +22,5 @@ export default function NotFound() {
         На главную
       </Button>
     </section>
-  )
+  );
 }

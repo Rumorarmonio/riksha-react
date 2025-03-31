@@ -1,22 +1,22 @@
-import styles from './Item.module.scss'
-import Button from '../Button/Button'
-import {useDispatch, useSelector} from 'react-redux'
-import React from 'react'
-import {addItem, selectCartItemById} from '../../../redux/slices/cartSlice'
-import {Link} from 'react-router-dom'
+import styles from './Item.module.scss';
+import {Button} from '../Button/Button';
+import {useDispatch, useSelector} from 'react-redux';
+import React from 'react';
+import {addItem, selectCartItemById} from '../../../redux/slices/cartSlice';
+import {Link} from 'react-router-dom';
 
-export default function Item({ product, id, today }) {
-  const dispatch = useDispatch()
-  const cartItem = useSelector(selectCartItemById(id))
+export function Item({ product, id, today }) {
+  const dispatch = useDispatch();
+  const cartItem = useSelector(selectCartItemById(id));
 
-  const addedCount = cartItem ? cartItem.count : 0
+  const addedCount = cartItem ? cartItem.count : 0;
 
   function onClickAdd(item) {
-    dispatch(addItem({ ...item }))
+    dispatch(addItem({ ...item }));
   }
 
-  const characteristics = ['spicy', 'baked', 'vegan']
-  let leftColumn = null
+  const characteristics = ['spicy', 'baked', 'vegan'];
+  let leftColumn = null;
   if (product.characteristics) {
     leftColumn =
       (
@@ -33,23 +33,23 @@ export default function Item({ product, id, today }) {
                       />
                       <span className={styles.label}>{name}</span>
                     </li>
-                  )
+                  );
                 } else {
-                  return null
+                  return null;
                 }
               },
             )
           }
         </ul>
-      )
+      );
   }
 
   // TODO: optimize
   // three months
-  const timeCheck = today - Date.parse(product.dateAdded) < 1000/*ms*/ * 60/*s*/ * 60/*min*/ * 24/*h*/ * 30/*days*/ * 3/*months*/
-  const ordersCheck = product.orders >= 800
-  const saleCheck = product.oldPrice !== null
-  let rightColumn = null
+  const timeCheck = today - Date.parse(product.dateAdded) < 1000/*ms*/ * 60/*s*/ * 60/*min*/ * 24/*h*/ * 30/*days*/ * 3;/*months*/
+  const ordersCheck = product.orders >= 800;
+  const saleCheck = product.oldPrice !== null;
+  let rightColumn = null;
   if (timeCheck || ordersCheck || saleCheck) {
     rightColumn =
       (
@@ -84,7 +84,7 @@ export default function Item({ product, id, today }) {
             </li>
           }
         </ul>
-      )
+      );
   }
 
   return (
@@ -141,5 +141,5 @@ export default function Item({ product, id, today }) {
         </div>
       </div>
     </li>
-  )
+  );
 }

@@ -1,7 +1,7 @@
-import React from 'react'
-import ContentLoader from 'react-content-loader'
+import React from 'react';
+import ContentLoader from 'react-content-loader';
 
-export default function Skeleton(props) {
+export function Skeleton(props) {
   return (
     <ContentLoader
       speed={2}
@@ -22,5 +22,5 @@ export default function Skeleton(props) {
       <rect x="0" y="452" rx="6" ry="6" width="115" height="43"/>
       <rect x="210" y="452" rx="6" ry="6" width="180" height="43"/>
     </ContentLoader>
-  )
+  );
 }

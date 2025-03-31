@@ -1,21 +1,21 @@
-import {Link, useLocation} from 'react-router-dom'
-import styles from './HeaderTop.module.scss'
-import phone from '../../../assets/images/svg/header/phone-fill.svg'
-import cart from '../../../assets/images/svg/header/cart.svg'
-import profile from '../../../assets/images/svg/header/profile.svg'
-import logo from '../../../assets/images/png/logo.png'
-import {navigation} from '../../../assets/data/arrays'
-import {useSelector} from 'react-redux'
-import {selectCart} from '../../../redux/slices/cartSlice'
+import {Link, useLocation} from 'react-router-dom';
+import styles from './HeaderTop.module.scss';
+import phone from '../../../assets/images/svg/header/phone-fill.svg';
+import cart from '../../../assets/images/svg/header/cart.svg';
+import profile from '../../../assets/images/svg/header/profile.svg';
+import logo from '../../../assets/images/png/logo.png';
+import {navigation} from '../../../assets/data/arrays';
+import {useSelector} from 'react-redux';
+import {selectCart} from '../../../redux/slices/cartSlice';
 
-export default function HeaderTop() {
-  const { items, totalPrice } = useSelector(selectCart)
+export function HeaderTop() {
+  const { items, totalPrice } = useSelector(selectCart);
   const totalCount = items.reduce((sum, item) =>
       sum + item.count,
     0,
-  )
+  );
 
-  const location = useLocation()
+  const location = useLocation();
 
   const elements =
     navigation.map(({ name, url }, index) => (
@@ -24,7 +24,7 @@ export default function HeaderTop() {
           {name}
         </Link>
       </li>
-    ))
+    ));
 
   return (
     <div className={styles.upper}>
@@ -87,5 +87,5 @@ export default function HeaderTop() {
         </div>
       </div>
     </div>
-  )
+  );
 }

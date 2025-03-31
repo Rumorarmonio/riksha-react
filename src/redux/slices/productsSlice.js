@@ -1,5 +1,5 @@
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
-import axios from 'axios'
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import axios from 'axios';
 
 export const fetchProducts = createAsyncThunk('products/fetchProductsStatus', async (params, thunkAPI) => {
   const {
@@ -9,45 +9,45 @@ export const fetchProducts = createAsyncThunk('products/fetchProductsStatus', as
     // category,
     search,
     currentPage,
-  } = params
+  } = params;
 
   const { data } = await axios.get(
     `https://64db1b63593f57e435b07477.mockapi.io/items?page=${currentPage}&limit=9&sortBy=${sortBy}&order=${order}${search}`,
-  )
+  );
 
-  return data
-})
+  return data;
+});
 
 const initialState = {
   products: [],
   status: 'loading', // loading | success | error
-}
+};
 
 const productSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
     setProducts(state, action) {
-      state.products = action.payload
+      state.products = action.payload;
     },
   },
   extraReducers: {
     [fetchProducts.pending]: (state) => {
-      state.status = 'loading'
-      state.products = []
+      state.status = 'loading';
+      state.products = [];
     },
     [fetchProducts.fulfilled]: (state, action) => {
-      state.products = action.payload
-      state.status = 'success'
+      state.products = action.payload;
+      state.status = 'success';
     },
     [fetchProducts.rejected]: (state) => {
-      state.status = 'error'
-      state.products = []
+      state.status = 'error';
+      state.products = [];
     },
   },
-})
+});
 
-export const selectProducts = state => state.products
+export const selectProducts = state => state.products;
 
-export const { setProducts } = productSlice.actions
-export default productSlice.reducer
+export const { setProducts } = productSlice.actions;
+export default productSlice.reducer;

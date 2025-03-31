@@ -1,10 +1,10 @@
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
-import styles from './Footer.module.scss'
-import logo from '../../assets/images/png/logo-footer.png'
-import {categories, navigation, socials} from '../../assets/data/arrays'
+import styles from './Footer.module.scss';
+import logo from '../../assets/images/png/logo-footer.png';
+import {categories, navigation, socials} from '../../assets/data/arrays';
 
-export default function Footer() {
+export function Footer() {
   const categoryElements =
     categories.map(({ name, url }, index) => (
       <li key={index}>
@@ -12,14 +12,14 @@ export default function Footer() {
           {name}
         </Link>
       </li>
-    ))
+    ));
 
   const navigationElements =
     navigation.slice(0, 3).map(({ name, url }, index) => (
       <li key={index}>
         <Link to={url}>{name}</Link>
       </li>
-    ))
+    ));
 
   const socialElements =
     socials.map(({ name, icon, url }, index) => (
@@ -28,7 +28,7 @@ export default function Footer() {
           <img src={icon} alt={`${name}.svg`}/>
         </a>
       </li>
-    ))
+    ));
 
   return (
     <div className={styles.footer}>
@@ -68,5 +68,5 @@ export default function Footer() {
         </div>
       </div>
     </div>
-  )
+  );
 }

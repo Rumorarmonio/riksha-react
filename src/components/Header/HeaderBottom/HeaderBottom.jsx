@@ -1,9 +1,8 @@
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import styles from './HeaderBottom.module.scss';
+import {categories} from '../../../assets/data/arrays';
 
-import styles from './HeaderBottom.module.scss'
-import {categories} from '../../../assets/data/arrays'
-
-export default function HeaderBottom() {
+export function HeaderBottom() {
   const elements =
     categories.map(({ name, icon, url }, index) => (
       <li key={index}>
@@ -21,7 +20,7 @@ export default function HeaderBottom() {
           </span>
         </Link>
       </li>
-    ))
+    ));
 
   return (
     <div className={styles.bottom}>
@@ -31,5 +30,5 @@ export default function HeaderBottom() {
         </ul>
       </div>
     </div>
-  )
+  );
 }
