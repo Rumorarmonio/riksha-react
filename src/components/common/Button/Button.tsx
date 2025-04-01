@@ -5,9 +5,11 @@ import {ReactElement} from 'react'
 type Props = {
   // TODO: может передаваться не только строки, но и элементы
   children: string,
-  isLink: boolean,
+  isLink?: boolean,
   link: string,
   style?: React.CSSProperties,
+  // TODO: убрать этот атрибут
+  onClick?: () => void,
 }
 
 export function Button({children, isLink, link, style, ...buttonProps}: Props): ReactElement {

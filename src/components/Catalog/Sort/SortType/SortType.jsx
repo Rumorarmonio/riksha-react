@@ -1,19 +1,19 @@
-import React from 'react';
-import styles from './SortType.module.scss';
-import {sortTypes} from '../../../../assets/data/arrays';
-import {useDispatch, useSelector} from 'react-redux';
-import {selectSortType, setSort} from '../../../../redux/slices/filterSlice';
+import React from 'react'
+import styles from './SortType.module.scss'
+import {sortTypes} from '../../../../assets/data/arrays'
+import {useDispatch, useSelector} from 'react-redux'
+import {selectSortType, setSort} from '../../../../redux/slices/filterSlice'
 
 export function SortType() {
-  const dispatch = useDispatch();
-  const sortType = useSelector(selectSortType);
+  const dispatch = useDispatch()
+  const sortType = useSelector(selectSortType)
 
-  const [open, setOpen] = React.useState(false);
-  const sortRef = React.useRef();
+  const [open, setOpen] = React.useState(false)
+  const sortRef = React.useRef()
 
   function onClickListItem(type) {
-    dispatch(setSort(type));
-    setOpen(false);
+    dispatch(setSort(type))
+    setOpen(false)
   }
 
   // TODO: fix clicking outside
@@ -61,5 +61,5 @@ export function SortType() {
         )
       }
     </div>
-  );
+  )
 }

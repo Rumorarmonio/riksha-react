@@ -1,30 +1,34 @@
-import {Link, useLocation} from 'react-router-dom';
-import styles from './HeaderTop.module.scss';
-import phone from '../../../assets/images/svg/header/phone-fill.svg';
-import cart from '../../../assets/images/svg/header/cart.svg';
-import profile from '../../../assets/images/svg/header/profile.svg';
-import logo from '../../../assets/images/png/logo.png';
-import {navigation} from '../../../assets/data/arrays';
-import {useSelector} from 'react-redux';
-import {selectCart} from '../../../redux/slices/cartSlice';
+import {Link, useLocation} from 'react-router-dom'
+import styles from './HeaderTop.module.scss'
+import phone from '../../../assets/images/svg/header/phone-fill.svg'
+import cart from '../../../assets/images/svg/header/cart.svg'
+import profile from '../../../assets/images/svg/header/profile.svg'
+import logo from '../../../assets/images/png/logo.png'
+import {navigation} from '../../../assets/data/arrays'
+import {useSelector} from 'react-redux'
+import {selectCart} from '../../../redux/slices/cartSlice'
+import {Product} from '../../../types/Product'
+import {ReactElement} from 'react'
 
-export function HeaderTop() {
-  const { items, totalPrice } = useSelector(selectCart);
-  const totalCount = items.reduce((sum, item) =>
+export function HeaderTop(): ReactElement {
+  const {items, totalPrice} = useSelector(selectCart)
+
+  // TODO: перенести в slice
+  const totalCount = items.reduce((sum: number, item: Product): number =>
       sum + item.count,
     0,
-  );
+  )
 
-  const location = useLocation();
+  const location = useLocation()
 
-  const elements =
-    navigation.map(({ name, url }, index) => (
+  const navigationElements: ReactElement[] =
+    navigation.map(({name, url}: { name: string, url: string }, index: number): ReactElement => (
       <li className={styles.link} key={index}>
         <Link to={url}>
           {name}
         </Link>
       </li>
-    ));
+    ))
 
   return (
     <div className={styles.upper}>
@@ -35,7 +39,12 @@ export function HeaderTop() {
         <div className={styles.empty}></div>
         <div className={styles.main}>
           <ul className={styles.links}>
-            {elements}
+            {
+              navigationElements.map((element: ReactElement): ReactElement => (
+                  element
+                ),
+              )
+            }
           </ul>
           <div className={styles.contacts}>
             <div className={styles.phone}>
@@ -87,5 +96,5 @@ export function HeaderTop() {
         </div>
       </div>
     </div>
-  );
+  )
 }

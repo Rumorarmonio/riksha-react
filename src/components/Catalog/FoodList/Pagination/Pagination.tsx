@@ -1,6 +1,6 @@
 import styles from './Pagination.module.scss'
 import ReactPaginate from 'react-paginate'
-import {ReactElement} from 'react'
+import {JSX} from 'react'
 
 type Props = {
   onChangePage: (page: number) => void,
@@ -8,7 +8,8 @@ type Props = {
 }
 
 // TODO: fix pagination
-export function Pagination({onChangePage, currentPage}: Props): ReactElement {
+// TODO: React.FC vs JSX.Element vs ReactElement
+export function Pagination({onChangePage, currentPage}: Props): JSX.Element {
   return (
     <ReactPaginate
       className={styles.pagination}

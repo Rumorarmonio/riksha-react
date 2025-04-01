@@ -1,55 +1,61 @@
-import styles from './Item.module.scss';
-import {Button} from '../Button/Button';
-import {useDispatch, useSelector} from 'react-redux';
-import React from 'react';
-import {addItem, selectCartItemById} from '../../../redux/slices/cartSlice';
-import {Link} from 'react-router-dom';
+import styles from './Item.module.scss'
+import {Button} from '../Button/Button'
+import {useDispatch, useSelector} from 'react-redux'
+import React, {ReactElement} from 'react'
+import {addItem, selectCartItemById} from '../../../redux/slices/cartSlice'
+import {Link} from 'react-router-dom'
+import {Product} from '../../../types/Product'
 
-export function Item({ product, id, today }) {
-  const dispatch = useDispatch();
-  const cartItem = useSelector(selectCartItemById(id));
+type Props = {
+  product: Product,
+  id: string,
+  today: Date
+}
 
-  const addedCount = cartItem ? cartItem.count : 0;
+export function Item({product, id, today}: Props): ReactElement {
+  const dispatch = useDispatch()
+  const cartItem = useSelector(selectCartItemById(id))
 
-  function onClickAdd(item) {
-    dispatch(addItem({ ...item }));
+  const addedCount: number = cartItem ? cartItem.count : 0
+
+  function onClickAdd(item: Product): void {
+    dispatch(addItem({...item}))
   }
 
-  const characteristics = ['spicy', 'baked', 'vegan'];
-  let leftColumn = null;
+  const characteristics: string[] = ['spicy', 'baked', 'vegan']
+  let leftColumn: ReactElement = <></>
   if (product.characteristics) {
-    leftColumn =
-      (
-        <ul className={styles.left}>
-          {
-            product.characteristics.map((name, index) => {
-                if (characteristics.includes(name)) {
-                  return (
-                    <li key={index}>
-                      <img
-                        className={styles.image}
-                        src={require(`../../../assets/images/svg/attributes/${name}.svg`)}
-                        alt={`${name}.svg`}
-                      />
-                      <span className={styles.label}>{name}</span>
-                    </li>
-                  );
-                } else {
-                  return null;
-                }
-              },
-            )
-          }
-        </ul>
-      );
+    leftColumn = (
+      <ul className={styles.left}>
+        {
+          product.characteristics.map((name: string, index: number): ReactElement | null => {
+              if (characteristics.includes(name)) {
+                return (
+                  <li key={index}>
+                    <img
+                      className={styles.image}
+                      src={require(`../../../assets/images/svg/attributes/${name}.svg`)}
+                      alt={`${name}.svg`}
+                    />
+                    <span className={styles.label}>{name}</span>
+                  </li>
+                )
+              } else {
+                return null
+              }
+            },
+          )
+        }
+      </ul>
+    )
   }
 
   // TODO: optimize
   // three months
-  const timeCheck = today - Date.parse(product.dateAdded) < 1000/*ms*/ * 60/*s*/ * 60/*min*/ * 24/*h*/ * 30/*days*/ * 3;/*months*/
-  const ordersCheck = product.orders >= 800;
-  const saleCheck = product.oldPrice !== null;
-  let rightColumn = null;
+  const timeCheck: boolean = Number(today) - Date.parse(product.dateAdded) < 1000/*ms*/ * 60/*s*/ * 60/*min*/ * 24/*h*/ * 30/*days*/ * 3/*months*/
+  const ordersCheck: boolean = product.orders >= 800
+  const saleCheck: boolean = product.oldPrice !== null
+  let rightColumn: ReactElement = <></>
   if (timeCheck || ordersCheck || saleCheck) {
     rightColumn =
       (
@@ -84,7 +90,7 @@ export function Item({ product, id, today }) {
             </li>
           }
         </ul>
-      );
+      )
   }
 
   return (
@@ -141,5 +147,5 @@ export function Item({ product, id, today }) {
         </div>
       </div>
     </li>
-  );
+  )
 }

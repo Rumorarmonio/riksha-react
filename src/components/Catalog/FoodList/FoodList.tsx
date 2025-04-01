@@ -9,7 +9,7 @@ type Props = {
   items: Product[],
   status: string,
   currentPage: number,
-  onChangePage: () => void
+  onChangePage: (number: number) => void
 }
 
 export function FoodList({items, status, currentPage, onChangePage}: Props): ReactElement {

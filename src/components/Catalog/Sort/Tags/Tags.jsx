@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 
-import styles from './Tags.module.scss';
-import {attributes, ingredients} from '../../../../assets/data/arrays';
-import {useDispatch} from 'react-redux';
-import {setCategoryId} from '../../../../redux/slices/filterSlice';
+import styles from './Tags.module.scss'
+import {attributes, ingredients} from '../../../../assets/data/arrays'
+import {useDispatch} from 'react-redux'
+import {setCategoryId} from '../../../../redux/slices/filterSlice'
 
 export function Tags() {
-  const [ingredientState, setIngredientState] = useState(ingredients);
-  const [attributeState, setAttributeState] = useState(attributes);
-  const dispatch = useDispatch();
+  const [ingredientState, setIngredientState] = useState(ingredients)
+  const [attributeState, setAttributeState] = useState(attributes)
+  const dispatch = useDispatch()
 
   // TODO: save tags to redux
   function createElements(state, setState) {
@@ -18,10 +18,10 @@ export function Tags() {
           className={`${styles.tag} ${selected ? styles.active : ''}`}
           onClick={
             () => {
-              dispatch(setCategoryId(id));
+              dispatch(setCategoryId(id))
               setState(state.map(item =>
                 item.id === id ? { id, name, icon, selected: !selected } : item),
-              );
+              )
               // console.log('tag ', categoryId)
             }
           }
@@ -37,7 +37,7 @@ export function Tags() {
           </span>
         </li>
       ),
-    );
+    )
   }
 
   return (
@@ -62,5 +62,5 @@ export function Tags() {
         {createElements(attributeState, setAttributeState)}
       </ul>
     </div>
-  );
+  )
 }
