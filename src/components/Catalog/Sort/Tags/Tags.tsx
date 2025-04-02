@@ -1,26 +1,27 @@
-import React, {useState} from 'react'
+import React, { JSX, useState } from 'react'
 
 import styles from './Tags.module.scss'
-import {attributes, ingredients} from '../../../../assets/data/arrays'
-import {useDispatch} from 'react-redux'
-import {setCategoryId} from '../../../../redux/slices/filterSlice'
+import { attributes, ingredients } from '../../../../assets/data/arrays'
+import { useDispatch } from 'react-redux'
+import { setCategoryId } from '../../../../redux/slices/filterSlice'
 
-export function Tags() {
+export function Tags(): JSX.Element {
   const [ingredientState, setIngredientState] = useState(ingredients)
   const [attributeState, setAttributeState] = useState(attributes)
   const dispatch = useDispatch()
 
   // TODO: save tags to redux
-  function createElements(state, setState) {
-    return state.map(({ id, name, icon, selected }) =>
+  function createElements(state: any, setState: (state: any) => void): any {
+    return state.map(({ id, name, icon, selected }: any): JSX.Element =>
       (
         <li
           className={`${styles.tag} ${selected ? styles.active : ''}`}
           onClick={
             () => {
               dispatch(setCategoryId(id))
-              setState(state.map(item =>
-                item.id === id ? { id, name, icon, selected: !selected } : item),
+              setState(state.map((item: any): any =>
+                  item.id === id ? { id, name, icon, selected: !selected } : item,
+                ),
               )
               // console.log('tag ', categoryId)
             }

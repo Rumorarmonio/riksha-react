@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { JSX } from 'react'
 import styles from './SortType.module.scss'
-import {sortTypes} from '../../../../assets/data/arrays'
-import {useDispatch, useSelector} from 'react-redux'
-import {selectSortType, setSort} from '../../../../redux/slices/filterSlice'
+import { sortTypes } from '../../../../assets/data/arrays'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectSortType, setSort } from '../../../../redux/slices/filterSlice'
 
-export function SortType() {
+export function SortType(): JSX.Element {
   const dispatch = useDispatch()
   const sortType = useSelector(selectSortType)
 
   const [open, setOpen] = React.useState(false)
-  const sortRef = React.useRef()
+  const sortRef = React.useRef<HTMLDivElement>(null)
 
-  function onClickListItem(type) {
+  function onClickListItem(type: any): void {
     dispatch(setSort(type))
     setOpen(false)
   }
@@ -34,7 +34,10 @@ export function SortType() {
   // }, [])
 
   return (
-    <div ref={sortRef} className={styles.sortType}>
+    <div
+      ref={sortRef}
+      className={styles.sortType}
+    >
       <span className={styles.supTitle}>Сортировка</span>
       <div className={styles.button}
            onClick={() => setOpen(!open)}>
@@ -46,10 +49,10 @@ export function SortType() {
           <div className={styles.popup}>
             <ul>
               {
-                sortTypes.map((type, index) => (
+                sortTypes.map((type: any, index: number): JSX.Element => (
                   <li
                     className={sortType.sortProperty === index ? 'active' : ''}
-                    onClick={() => onClickListItem(type)}
+                    onClick={(): void => onClickListItem(type)}
                     key={index}
                   >
                     {type.name}
