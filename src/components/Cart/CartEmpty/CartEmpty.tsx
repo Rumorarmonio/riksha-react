@@ -1,9 +1,9 @@
 import empty from '../../../assets/images/svg/cart/empty.svg'
 import styles from './CartEmpty.module.scss'
-import {Button} from '../../common/Button/Button'
-import {ReactElement} from 'react'
+import { Button } from '../../common/Button/Button'
+import { JSX } from 'react'
 
-export function CartEmpty(): ReactElement {
+export function CartEmpty(): JSX.Element {
   return (
     <section className={styles.empty}>
       <img

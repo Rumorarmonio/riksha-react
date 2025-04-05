@@ -1,6 +1,6 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './Button.module.scss'
-import {ReactElement} from 'react'
+import { JSX } from 'react'
 
 type Props = {
   // TODO: может передаваться не только строки, но и элементы
@@ -12,7 +12,7 @@ type Props = {
   onClick?: () => void,
 }
 
-export function Button({children, isLink, link, style, ...buttonProps}: Props): ReactElement {
+export function Button({ children, isLink, link, style, ...buttonProps }: Props): JSX.Element {
   return isLink ? (
     <Link
       className={styles.button}

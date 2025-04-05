@@ -1,11 +1,12 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './HeaderBottom.module.scss'
-import {categories} from '../../../assets/data/arrays'
-import {ReactElement} from 'react'
+import { categories } from '../../../assets/data/data'
+import { JSX } from 'react'
+import { ImageLink } from '../../../types/ImageLink'
 
-export function HeaderBottom(): ReactElement {
-  const categoryElements: ReactElement[] =
-    categories.map(({name, icon, url}: { name: string, icon: string, url: string }, index: number): ReactElement => (
+export function HeaderBottom(): JSX.Element {
+  const categoryElements: JSX.Element[] =
+    categories.map(({ name, icon, url }: ImageLink, index: number): JSX.Element => (
       <li key={index}>
         <Link
           className={styles.category}
@@ -27,12 +28,7 @@ export function HeaderBottom(): ReactElement {
     <div className={styles.bottom}>
       <div className={styles.wrapper}>
         <ul className={styles.categories}>
-          {
-            categoryElements.map((element: ReactElement): ReactElement => (
-                element
-              ),
-            )
-          }
+          {[...categoryElements]}
         </ul>
       </div>
     </div>

@@ -1,26 +1,37 @@
 import React, { JSX, useState } from 'react'
-
 import styles from './Tags.module.scss'
-import { attributes, ingredients } from '../../../../assets/data/arrays'
-import { useDispatch } from 'react-redux'
+import { attributeTags, ingredientTags } from '../../../../assets/data/data'
 import { setCategoryId } from '../../../../redux/slices/filterSlice'
+import { Tag } from '../../../../types/Tag'
+import clsx from 'clsx'
+import { useAppDispatch } from '../../../../redux/store'
 
 export function Tags(): JSX.Element {
-  const [ingredientState, setIngredientState] = useState(ingredients)
-  const [attributeState, setAttributeState] = useState(attributes)
-  const dispatch = useDispatch()
+  const [ingredientState, setIngredientState] = useState<Tag[]>(ingredientTags)
+  const [attributeState, setAttributeState] = useState<Tag[]>(attributeTags)
+  const dispatch = useAppDispatch()
 
   // TODO: save tags to redux
-  function createElements(state: any, setState: (state: any) => void): any {
-    return state.map(({ id, name, icon, selected }: any): JSX.Element =>
+  function createTags(state: Tag[], setState: (state: Tag[]) => void): JSX.Element[] {
+    return state.map(({ id, name, icon, selected }: Tag): JSX.Element =>
       (
         <li
-          className={`${styles.tag} ${selected ? styles.active : ''}`}
+          className={clsx(styles.tag, selected && styles.active)}
           onClick={
-            () => {
+            (): void => {
               dispatch(setCategoryId(id))
-              setState(state.map((item: any): any =>
-                  item.id === id ? { id, name, icon, selected: !selected } : item,
+              setState(state.map((item: Tag): Tag => {
+                    if (item.id === id) {
+                      return {
+                        id,
+                        name,
+                        icon,
+                        selected: !selected,
+                      }
+                    }
+
+                    return item
+                  },
                 ),
               )
               // console.log('tag ', categoryId)
@@ -41,6 +52,9 @@ export function Tags(): JSX.Element {
     )
   }
 
+  const ingredients: JSX.Element[] = createTags(ingredientState, setIngredientState)
+  const attributes: JSX.Element[] = createTags(attributeState, setAttributeState)
+
   return (
     <div className={styles.tags}>
       {/*TODO: breadcrumbs component*/}
@@ -54,13 +68,13 @@ export function Tags(): JSX.Element {
         Ингредиенты
       </span>
       <ul className={styles.list}>
-        {createElements(ingredientState, setIngredientState)}
+        {[...ingredients]}
       </ul>
       <span className={styles.label}>
         Характеристики
       </span>
       <ul className={styles.list}>
-        {createElements(attributeState, setAttributeState)}
+        {[...attributes]}
       </ul>
     </div>
   )

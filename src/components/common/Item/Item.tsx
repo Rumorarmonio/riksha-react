@@ -1,10 +1,11 @@
 import styles from './Item.module.scss'
-import {Button} from '../Button/Button'
-import {useDispatch, useSelector} from 'react-redux'
-import React, {ReactElement} from 'react'
-import {addItem, selectCartItemById} from '../../../redux/slices/cartSlice'
-import {Link} from 'react-router-dom'
-import {Product} from '../../../types/Product'
+import { Button } from '../Button/Button'
+import { useSelector } from 'react-redux'
+import React, { JSX } from 'react'
+import { addItem, selectCartItemById } from '../../../redux/slices/cartSlice'
+import { Link } from 'react-router-dom'
+import { Product } from '../../../types/Product'
+import { useAppDispatch } from '../../../redux/store'
 
 type Props = {
   product: Product,
@@ -12,23 +13,23 @@ type Props = {
   today: Date
 }
 
-export function Item({product, id, today}: Props): ReactElement {
-  const dispatch = useDispatch()
+export function Item({ product, id, today }: Props): JSX.Element {
+  const dispatch = useAppDispatch()
   const cartItem = useSelector(selectCartItemById(id))
 
-  const addedCount: number = cartItem ? cartItem.count : 0
+  const addedCount: number = cartItem ? cartItem.added : 0
 
   function onClickAdd(item: Product): void {
-    dispatch(addItem({...item}))
+    dispatch(addItem({ ...item }))
   }
 
   const characteristics: string[] = ['spicy', 'baked', 'vegan']
-  let leftColumn: ReactElement = <></>
+  let leftColumn: JSX.Element = <></>
   if (product.characteristics) {
     leftColumn = (
       <ul className={styles.left}>
         {
-          product.characteristics.map((name: string, index: number): ReactElement | null => {
+          product.characteristics.map((name: string, index: number): JSX.Element | null => {
               if (characteristics.includes(name)) {
                 return (
                   <li key={index}>
@@ -55,7 +56,7 @@ export function Item({product, id, today}: Props): ReactElement {
   const timeCheck: boolean = Number(today) - Date.parse(product.dateAdded) < 1000/*ms*/ * 60/*s*/ * 60/*min*/ * 24/*h*/ * 30/*days*/ * 3/*months*/
   const ordersCheck: boolean = product.orders >= 800
   const saleCheck: boolean = product.oldPrice !== null
-  let rightColumn: ReactElement = <></>
+  let rightColumn: JSX.Element = <></>
   if (timeCheck || ordersCheck || saleCheck) {
     rightColumn =
       (
@@ -140,7 +141,7 @@ export function Item({product, id, today}: Props): ReactElement {
               marginTop: '7px',
               padding: '13px 60px',
             }}
-            onClick={() => onClickAdd(product)}
+            onClick={(): void => onClickAdd(product)}
           >
             {`Добавить ${addedCount ? `(${addedCount})` : ''}`}
           </Button>

@@ -1,22 +1,23 @@
 import styles from './Cart.module.scss'
-import {useDispatch, useSelector} from 'react-redux'
-import {clearItems, selectCart} from '../../redux/slices/cartSlice'
-import {CartEmpty} from './CartEmpty/CartEmpty'
-import {CartItem} from './CartItem/CartItem'
-import {ReactElement} from 'react'
-import {Dispatch} from '@reduxjs/toolkit'
-import {Product} from '../../types/Product'
+import { useSelector } from 'react-redux'
+import { clearItems, selectCart } from '../../redux/slices/cartSlice'
+import { CartEmpty } from './CartEmpty/CartEmpty'
+import { CartItem } from './CartItem/CartItem'
+import { Product } from '../../types/Product'
+import { JSX } from 'react'
+import { useAppDispatch } from '../../redux/store'
 
-export function Cart(): ReactElement {
-  const dispatch: Dispatch = useDispatch()
-  const {totalPrice, items} = useSelector(selectCart)
+export function Cart(): JSX.Element {
+  const dispatch = useAppDispatch()
+  const { totalPrice, items } = useSelector(selectCart)
 
   if (!totalPrice) {
-    return <CartEmpty/>
+    return <CartEmpty />
   }
 
+  // TODO: должно быть в redux
   const totalCount: number = items.reduce((sum: number, product: Product): number =>
-      sum + product.count,
+      sum + product.added,
     0,
   )
 
@@ -41,11 +42,12 @@ export function Cart(): ReactElement {
           </span>
           <ul className={styles.list}>
             {
-              items.map((product: Product): ReactElement =>
+              items.map((product: Product): JSX.Element =>
                 <CartItem
                   key={product.id}
                   product={product}
-                />)
+                />,
+              )
             }
           </ul>
           <span className={styles.label}>

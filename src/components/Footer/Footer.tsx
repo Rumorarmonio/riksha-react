@@ -1,11 +1,46 @@
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import styles from './Footer.module.scss'
 import logo from '../../assets/images/png/logo-footer.png'
-import {categories, navigation, socials} from '../../assets/data/arrays'
-import {ReactElement} from 'react'
+import { categories, navigationItems, socials } from '../../assets/data/data'
+import { ImageLink } from '../../types/ImageLink'
+import { NavigationItem } from '../../types/NavigationItem'
+import { JSX } from 'react'
 
-export function Footer(): ReactElement {
+export function Footer(): JSX.Element {
+  const navigationElements: JSX.Element[] = navigationItems.slice(0, 3).map(
+    ({ name, url }: NavigationItem, index: number): JSX.Element => (
+      <li key={index}>
+        <Link to={url}>
+          {name}
+        </Link>
+      </li>
+    ),
+  )
+
+  const socialElements: JSX.Element[] = socials.map(
+    ({ name, icon, url }: ImageLink, index: number): JSX.Element => (
+      <li key={index}>
+        <a href={url}>
+          <img
+            src={icon}
+            alt={`${name}.svg`}
+          />
+        </a>
+      </li>
+    ),
+  )
+
+  const categoryElements: JSX.Element[] = categories.map(
+    ({ name, url }: NavigationItem, index: number): JSX.Element => (
+      <li key={index}>
+        <Link to={url}>
+          {name}
+        </Link>
+      </li>
+    ),
+  )
+
   return (
     <div className={styles.footer}>
       <div className={styles.wrapper}>
@@ -20,40 +55,15 @@ export function Footer(): ReactElement {
         </Link>
         <div className={styles.left}>
           <ul className={styles.links}>
-            {
-              navigation.slice(0, 3).map(({name, url}: { name: string, url: string }, index: number): ReactElement => (
-                <li key={index}>
-                  <Link to={url}>{name}</Link>
-                </li>
-              ))
-            }
+            {[...navigationElements]}
           </ul>
           <ul className={styles.socials}>
-            {
-              socials.map(({name, icon, url}: { name: string, icon: string, url: string }, index: number): ReactElement => (
-                <li key={index}>
-                  <a href={url}>
-                    <img
-                      src={icon}
-                      alt={`${name}.svg`}
-                    />
-                  </a>
-                </li>
-              ))
-            }
+            {[...socialElements]}
           </ul>
         </div>
         <div className={styles.center}>
           <ul className={styles.links}>
-            {
-              categories.map(({name, url}: { name: string, url: string }, index: number): ReactElement => (
-                <li key={index}>
-                  <Link to={url}>
-                    {name}
-                  </Link>
-                </li>
-              ))
-            }
+            {[...categoryElements]}
           </ul>
         </div>
         <div className={styles.right}>

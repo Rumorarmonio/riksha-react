@@ -1,7 +1,35 @@
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { Product } from '../../types/Product'
+import { RootState } from '../store'
+import { SortPropertyEnum } from '../../types/Sort'
 
-export const fetchProducts = createAsyncThunk('products/fetchProductsStatus', async (params: any, thunkAPI) => {
+export type SearchProductsParams = {
+  sortBy: SortPropertyEnum;
+  order: 'asc' | 'desc';
+  // TODO: add category
+  // category: string;
+  search: string;
+  currentPage: number;
+}
+
+export enum Status {
+  LOADING = 'loading',
+  SUCCESS = 'success',
+  ERROR = 'error',
+}
+
+interface ProductsSliceState {
+  products: Product[],
+  status: Status,
+}
+
+const initialState: ProductsSliceState = {
+  products: [],
+  status: Status.LOADING,
+}
+
+export const fetchProducts = createAsyncThunk<Product[], SearchProductsParams>('products/fetchProductsStatus', async (params: SearchProductsParams) => {
   const {
     sortBy,
     order,
@@ -11,43 +39,38 @@ export const fetchProducts = createAsyncThunk('products/fetchProductsStatus', as
     currentPage,
   } = params
 
-  const { data } = await axios.get(
+  const { data: products } = await axios.get<Product[]>(
     `https://64db1b63593f57e435b07477.mockapi.io/items?page=${currentPage}&limit=9&sortBy=${sortBy}&order=${order}${search}`,
   )
 
-  return data
+  return products
 })
-
-const initialState = {
-  products: [],
-  status: 'loading', // loading | success | error
-}
 
 const productSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    setProducts(state, action) {
+    setProducts(state, action: PayloadAction<Product[]>): void {
       state.products = action.payload
     },
   },
-  extraReducers: {
-    [fetchProducts.pending as any]: (state: any) => {
-      state.status = 'loading'
+  extraReducers: (builder) => {
+    builder.addCase(fetchProducts.pending, (state): void => {
+      state.status = Status.LOADING
       state.products = []
-    },
-    [fetchProducts.fulfilled as any]: (state: any, action: any) => {
+    })
+    builder.addCase(fetchProducts.fulfilled, (state, action: PayloadAction<Product[]>): void => {
+      state.status = Status.SUCCESS
       state.products = action.payload
-      state.status = 'success'
-    },
-    [fetchProducts.rejected as any]: (state: any) => {
-      state.status = 'error'
+    })
+    builder.addCase(fetchProducts.rejected, (state): void => {
+      state.status = Status.ERROR
       state.products = []
-    },
+    })
   },
 })
 
-export const selectProducts = (state: any) => state.products
+export const selectProducts = (state: RootState): ProductsSliceState => state.products
 
 export const { setProducts } = productSlice.actions
 export default productSlice.reducer

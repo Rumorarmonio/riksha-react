@@ -1,9 +1,9 @@
 import styles from './NotFound.module.scss'
 import notFound from '../../assets/images/svg/404.svg'
-import {Button} from '../common/Button/Button'
-import {ReactElement} from 'react'
+import { Button } from '../common/Button/Button'
+import { JSX } from 'react'
 
-export function NotFound(): ReactElement {
+export function NotFound(): JSX.Element {
   return (
     <section className={styles.notFound}>
       <img

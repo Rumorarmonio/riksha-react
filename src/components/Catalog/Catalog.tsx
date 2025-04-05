@@ -1,27 +1,28 @@
-import React, {ReactElement, useRef} from 'react'
-import qs from 'qs'
-import {NavigateFunction, useNavigate} from 'react-router-dom'
-import {useDispatch, useSelector} from 'react-redux'
-import {InfoBlock} from './InfoBlock/InfoBlock'
-import {Sort} from './Sort/Sort'
-import {FoodList} from './FoodList/FoodList'
-import {selectFilter, selectSearchValue, setCategoryId, setCurrentPage, setFilters} from '../../redux/slices/filterSlice'
-import {sortTypes} from '../../assets/data/arrays'
-import {fetchProducts, selectProducts} from '../../redux/slices/productsSlice'
-import {AsyncThunkAction, Dispatch, ThunkDispatch} from '@reduxjs/toolkit'
+import React, { JSX, useRef } from 'react'
+import qs, { ParsedQs } from 'qs'
+import { NavigateFunction, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { InfoBlock } from './InfoBlock/InfoBlock'
+import { Sorting } from './Sort/Sorting'
+import { FoodList } from './FoodList/FoodList'
+import { FilterSliceState, selectFilter, selectSearchValue, setCategoryId, setCurrentPage, setFilters } from '../../redux/slices/filterSlice'
+import { sortTypes } from '../../assets/data/data'
+import { fetchProducts, selectProducts } from '../../redux/slices/productsSlice'
+import { Sort, SortPropertyEnum } from '../../types/Sort'
+import { useAppDispatch } from '../../redux/store'
 
-export function Catalog(): ReactElement {
+export function Catalog(): JSX.Element {
   console.log('catalog rendered')
-  const dispatch = useDispatch<ThunkDispatch<any, any, any>>()
+  const dispatch = useAppDispatch()
   const navigate: NavigateFunction = useNavigate()
 
-  const isSearch = useRef(false)
-  const isMounted = useRef(false)
+  const isSearch = useRef<boolean>(false)
+  const isMounted = useRef<boolean>(false)
 
-  const {categoryId, sortType, currentPage} = useSelector(selectFilter)
-  const {products, status} = useSelector(selectProducts)
+  const { categoryId, sortType, currentPage } = useSelector(selectFilter)
+  const { products, status } = useSelector(selectProducts)
 
-  function onChangeCategory(id: string): void {
+  function onChangeCategory(id: number): void {
     dispatch(setCategoryId(id))
   }
 
@@ -30,14 +31,14 @@ export function Catalog(): ReactElement {
     dispatch(setCurrentPage(number))
   }
 
-  const searchValue = useSelector(selectSearchValue)
+  const searchValue: string = useSelector(selectSearchValue)
 
   async function getProducts(): Promise<void> {
-    const sortBy = sortType.sortProperty.replace('-', '')
-    const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc'
+    const sortBy: SortPropertyEnum = sortType.sortBy.replace('-', '') as SortPropertyEnum
+    const order: 'asc' | 'desc' = sortType.sortBy.includes('-') ? 'asc' : 'desc'
     // const category = categoryId > 0 ? `category=${categoryId}` : ''
     // TODO: search by name
-    const search = searchValue ? `&search=${searchValue}` : ''
+    const search: string = searchValue ? `&search=${searchValue}` : ''
 
     dispatch(
       fetchProducts({
@@ -50,55 +51,61 @@ export function Catalog(): ReactElement {
   }
 
   // TODO: fix multiple renderings
-  React.useEffect(() => {
+  React.useEffect((): void => {
     if (isMounted.current) {
-      const queryString = qs.stringify({
-        sortProperty: sortType.sortProperty,
+      const queryString: string = qs.stringify({
+        sortBy: sortType.sortBy,
         categoryId,
         currentPage,
       })
+
       navigate(`?${queryString}`)
     }
+
     isMounted.current = true
 
-    if (!isSearch.current) {
-      getProducts()
-    }
+    // TODO: зачем здесь проверка?
+    // if (!isSearch.current) {
+    getProducts()
+    // }
 
     // isSearch.current = false
     // window.scrollTo(0, 0)
-  }, [categoryId, sortType.sortProperty, searchValue, currentPage])
+  }, [categoryId, sortType.sortBy, searchValue, currentPage])
 
   // TODO: fix getting params from query string
-  React.useEffect(() => {
-    // console.log(qs.parse(window.location.search.substring(1)))
+  React.useEffect((): void => {
     if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1))
+      // TODO: использовать useLocation() (возможно)
+      const params: ParsedQs = qs.parse(window.location.search.substring(1))
 
-      const sortType = sortTypes.find(obj =>
-        obj.sortProperty === params.sortProperty,
-      )
+      const sortType: Sort = sortTypes.find((type: Sort): boolean =>
+        type.sortBy === params.sortBy,
+      ) as Sort
 
       dispatch(
         setFilters({
-          ...params,
-          sortType,
-        }),
+          searchValue: params.search,
+          categoryId: Number(params.category),
+          currentPage: Number(params.currentPage),
+          sortType: sortType || sortTypes[0],
+        } as FilterSliceState),
       )
+
       isSearch.current = true
     }
   }, [])
 
   return (
     <>
-      <Sort/>
+      <Sorting />
       <FoodList
         items={products}
         status={status}
         currentPage={currentPage}
         onChangePage={onChangePage}
       />
-      <InfoBlock/>
+      <InfoBlock />
     </>
   )
 }

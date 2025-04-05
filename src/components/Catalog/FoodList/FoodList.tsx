@@ -1,9 +1,9 @@
-import React, {ReactElement} from 'react'
+import React, { JSX } from 'react'
 import styles from './FoodList.module.scss'
-import {Item} from '../../common/Item/Item'
-import {Skeleton} from '../../common/Item/Skeleton'
-import {Pagination} from './Pagination/Pagination'
-import {Product} from '../../../types/Product'
+import { Item } from '../../common/Item/Item'
+import { Skeleton } from '../../common/Item/Skeleton'
+import { Pagination } from './Pagination/Pagination'
+import { Product } from '../../../types/Product'
 
 type Props = {
   items: Product[],
@@ -12,19 +12,19 @@ type Props = {
   onChangePage: (number: number) => void
 }
 
-export function FoodList({items, status, currentPage, onChangePage}: Props): ReactElement {
+export function FoodList({ items, status, currentPage, onChangePage }: Props): JSX.Element {
   const today = new Date()
 
-  const cards: ReactElement[] =
+  const cards: JSX.Element[] =
     status === 'loading'
       ?
-      [...new Array(9)].map((_: any, index: number): ReactElement =>
+      [...new Array(9)].map((_: any, index: number): JSX.Element =>
         <Skeleton
           key={index}
         />,
       )
       :
-      items.map((item: Product): ReactElement =>
+      items.map((item: Product): JSX.Element =>
         <Item
           key={item.id}
           product={item}
@@ -44,12 +44,7 @@ export function FoodList({items, status, currentPage, onChangePage}: Props): Rea
           </h1>
         ) : (
           <ul className={styles.wrapper}>
-            {
-              cards.map((card: ReactElement): ReactElement => (
-                  card
-                ),
-              )
-            }
+            {[...cards]}
           </ul>
         )
       }

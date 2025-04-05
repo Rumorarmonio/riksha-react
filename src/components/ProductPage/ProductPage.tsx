@@ -1,17 +1,18 @@
-import {NavigateFunction, useNavigate, useParams} from 'react-router-dom'
+import { NavigateFunction, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
-import {ReactElement, useEffect, useState} from 'react'
-import {Product} from '../../types/Product'
+import { JSX, useEffect, useState } from 'react'
+import { Product } from '../../types/Product'
 
-export function ProductPage(): ReactElement {
+// TODO: pages directory
+export function ProductPage(): JSX.Element {
   const [product, setProduct] = useState<Product>()
-  const {id} = useParams() as { id: string }
+  const { id } = useParams() as { id: string }
   const navigate: NavigateFunction = useNavigate()
 
   useEffect((): void => {
     async function fetchProduct(id: string): Promise<void> {
       try {
-        const {data} = await axios.get(`https://64db1b63593f57e435b07477.mockapi.io/items/${id}`)
+        const { data } = await axios.get(`https://64db1b63593f57e435b07477.mockapi.io/items/${id}`)
         setProduct(data)
       } catch (error) {
         alert('Не нашёлся продукт!')

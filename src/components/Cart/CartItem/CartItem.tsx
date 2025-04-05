@@ -1,19 +1,21 @@
-import {useDispatch} from 'react-redux'
-import {addItem, minusItem, removeItem} from '../../../redux/slices/cartSlice'
+import { addItem, minusItem, removeItem } from '../../../redux/slices/cartSlice'
 
 import styles from './CartItem.module.scss'
 import trashBin from '../../../assets/images/svg/cart/trash-bin.svg'
-import {Product} from '../../../types/Product'
-import {Dispatch} from '@reduxjs/toolkit'
-import {ReactElement} from 'react'
+import { Product } from '../../../types/Product'
+import { JSX } from 'react'
+import { useAppDispatch } from '../../../redux/store'
 
 type Props = { product: Product }
 
-export function CartItem({product}: Props): ReactElement {
-  const dispatch: Dispatch = useDispatch()
+export function CartItem({ product }: Props): JSX.Element {
+  const dispatch = useAppDispatch()
 
   function onClickPlus(): void {
-    dispatch(addItem(product.id))
+    const id: string = product.id
+    dispatch(addItem({
+      id,
+    } as Product))
   }
 
   function onClickMinus(): void {
@@ -48,7 +50,7 @@ export function CartItem({product}: Props): ReactElement {
           </span>
           <span
             className={styles.quantity}>
-            {product.count}
+            {product.added}
           </span>
           <span
             className={styles.button}
@@ -58,7 +60,7 @@ export function CartItem({product}: Props): ReactElement {
           </span>
         </div>
         <span className={styles.price}>
-          {product.price * product.count} &#8381;
+          {product.price * product.added} &#8381;
         </span>
         <img
           className={styles.trashBin}

@@ -1,3 +1,5 @@
+// TODO: можно использовать TProduct, чтобы не было конфликтов с именем компонента
+// TODO: разные типы для продукта и для продукта в корзине
 export type Product = {
   id: string,
   name: string,
@@ -13,6 +15,5 @@ export type Product = {
   rating: number,
   dateAdded: string,
   characteristics: string[],
-  // TODO: rename to added
-  count: number,
+  added: number,
 }

@@ -1,9 +1,9 @@
 import React from 'react'
-import ReactDOM, {Root} from 'react-dom/client'
-import {BrowserRouter} from 'react-router-dom'
-import {store} from './redux/store'
-import {App} from './App'
-import {Provider} from 'react-redux'
+import ReactDOM, { Root } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import { store } from './redux/store'
+import { App } from './App'
+import { Provider } from 'react-redux'
 
 import './index.scss'
 
@@ -16,7 +16,7 @@ if (rootElement) {
     <React.StrictMode>
       <BrowserRouter>
         <Provider store={store}>
-          <App/>
+          <App />
         </Provider>
       </BrowserRouter>
     </React.StrictMode>,
