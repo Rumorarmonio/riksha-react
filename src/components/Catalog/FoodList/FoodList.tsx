@@ -13,6 +13,8 @@ type Props = {
 }
 
 export function FoodList({ items, status, currentPage, onChangePage }: Props): JSX.Element {
+  // useWhyDidYouUpdate('FoodList', { items, status, currentPage, onChangePage })
+
   const today = new Date()
 
   const cards: JSX.Element[] =

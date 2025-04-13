@@ -38,7 +38,9 @@ export function Item({ product, id, today }: Props): JSX.Element {
                       src={require(`../../../assets/images/svg/attributes/${name}.svg`)}
                       alt={`${name}.svg`}
                     />
-                    <span className={styles.label}>{name}</span>
+                    <span className={styles.label}>
+                      {name}
+                    </span>
                   </li>
                 )
               } else {

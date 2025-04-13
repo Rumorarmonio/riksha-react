@@ -1,4 +1,4 @@
-import React, { JSX, useRef } from 'react'
+import React, { JSX, useCallback, useEffect, useRef } from 'react'
 import qs, { ParsedQs } from 'qs'
 import { NavigateFunction, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -27,9 +27,9 @@ export function Catalog(): JSX.Element {
   }
 
   // TODO: count pages in code and remove hardcoded number
-  function onChangePage(number: number): void {
+  const onChangePage = useCallback((number: number): void => {
     dispatch(setCurrentPage(number))
-  }
+  }, [])
 
   const searchValue: string = useSelector(selectSearchValue)
 
@@ -51,7 +51,7 @@ export function Catalog(): JSX.Element {
   }
 
   // TODO: fix multiple renderings
-  React.useEffect((): void => {
+  useEffect((): void => {
     if (isMounted.current) {
       const queryString: string = qs.stringify({
         sortBy: sortType.sortBy,
@@ -70,11 +70,15 @@ export function Catalog(): JSX.Element {
     // }
 
     // isSearch.current = false
-    // window.scrollTo(0, 0)
-  }, [categoryId, sortType.sortBy, searchValue, currentPage])
+  }, [
+    categoryId,
+    sortType.sortBy,
+    searchValue,
+    currentPage,
+  ])
 
   // TODO: fix getting params from query string
-  React.useEffect((): void => {
+  useEffect((): void => {
     if (window.location.search) {
       // TODO: использовать useLocation() (возможно)
       const params: ParsedQs = qs.parse(window.location.search.substring(1))

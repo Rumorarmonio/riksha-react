@@ -5,6 +5,7 @@ import trashBin from '../../../assets/images/svg/cart/trash-bin.svg'
 import { Product } from '../../../types/Product'
 import { JSX } from 'react'
 import { useAppDispatch } from '../../../redux/store'
+import clsx from 'clsx'
 
 type Props = { product: Product }
 
@@ -29,7 +30,7 @@ export function CartItem({ product }: Props): JSX.Element {
   }
 
   return (
-    <li className={styles.cartItem}>
+    <li className={styles['cart-item']}>
       <div className={styles.left}>
         <img
           className={styles.image}
@@ -41,29 +42,30 @@ export function CartItem({ product }: Props): JSX.Element {
         </h1>
       </div>
       <div className={styles.right}>
-        <div className={styles.quantityContainer}>
-          <span
-            className={styles.button}
+        <div className={styles['quantity-container']}>
+          <button
+            disabled={product.added <= 1}
+            className={clsx(styles.button, product.added <= 1 && styles._disabled)}
             onClick={onClickMinus}
           >
             -
-          </span>
+          </button>
           <span
             className={styles.quantity}>
             {product.added}
           </span>
-          <span
+          <button
             className={styles.button}
             onClick={onClickPlus}
           >
             +
-          </span>
+          </button>
         </div>
         <span className={styles.price}>
           {product.price * product.added} &#8381;
         </span>
         <img
-          className={styles.trashBin}
+          className={styles['trash-bin']}
           src={trashBin}
           onClick={onClickRemove}
           alt="trash-bin.svg"

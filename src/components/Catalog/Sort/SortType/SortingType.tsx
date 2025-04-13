@@ -1,4 +1,4 @@
-import React, { JSX } from 'react'
+import React, { JSX, useRef } from 'react'
 import styles from './SortType.module.scss'
 import { sortTypes } from '../../../../assets/data/data'
 import { useSelector } from 'react-redux'
@@ -12,7 +12,7 @@ export function SortingType(): JSX.Element {
   const sortType: any = useSelector(selectSortType)
 
   const [open, setOpen] = React.useState(false)
-  const sortRef = React.useRef<HTMLDivElement>(null)
+  const sortRef = useRef<HTMLDivElement>(null)
 
   function onClickListItem(type: any): void {
     dispatch(setSort(type))

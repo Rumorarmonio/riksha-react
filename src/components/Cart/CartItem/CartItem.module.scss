@@ -1,6 +1,6 @@
 @use '../../../assets/styles/variables';
 
-.cartItem {
+.cart-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,7 +32,7 @@
     align-items: center;
     gap: 35px;
 
-    .quantityContainer {
+    .quantity-container {
       display: flex;
       align-items: center;
       gap: 20px;
@@ -51,10 +51,15 @@
         color: variables.$accent;
         cursor: pointer;
         user-select: none;
+
+        &._disabled {
+          color: variables.$grey-darker;
+          pointer-events: none;
+        }
       }
     }
 
-    .trashBin {
+    .trash-bin {
       cursor: pointer;
     }
 
